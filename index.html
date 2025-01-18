@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Header -->
+  <header class="bg-black z-10 fixed w-full px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
+      <span class="text-lg font-semibold">Reddit</span>
+    </div>
+    <div class="relative">
+      <input type="text" placeholder="Search Reddit" class="bg-gray-700 text-white rounded-full px-4 py-1 w-64 focus:outline-none">
+    </div>
+    <div class="flex items-center space-x-4">
+      <button class="bg-gray-700 px-3 py-1 rounded-full">Get App</button>
+      <button class="bg-orange-500 px-3 py-1 rounded-full">Log In</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="flex relative p-10">
+    <!-- Sidebar -->
+    <aside class="w-64 min-h-screen bg-gray-800 p-4">
+      <nav>
+        <ul class="space-y-4">
+          <li>
+            <a href="#" class="flex items-center space-x-2 hover:text-orange-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 12l18-12v24z"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">Popular</a>
+          </li>
+        </ul>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Recent</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
+            <li><a href="#" class="hover:text-orange-500">Games</a></li>
+            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Feed -->
+    <main class="flex-1 ">
+      <div class="grid grid-cols-1 md:grid-cols-3 p-4 gap-4">
+        <!-- Post Card -->
+        <div class="bg-gray-800 rounded-lg p-4">
+          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
+          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+          
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/news</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-4">
+          <h3 class="font-semibold text-lg">New Captain America poster</h3>
+          <p class="text-sm text-gray-400">Official IMAX Poster for 'Captain America...</p>
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/movies</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-4">
+          <h3 class="font-semibold text-lg">Sasaki to Dodgers</h3>
+          <p class="text-sm text-gray-400">Roki Sasaki is a Dodger!</p>
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/Dodgers</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-900 text-white">
   <!-- Header -->
-  <header class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+  <header class="bg-black z-10 fixed w-full px-4 py-2 flex items-center justify-between">
     <div class="flex items-center space-x-2">
       <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
       <span class="text-lg font-semibold">Reddit</span>
@@ -23,9 +23,9 @@
   </header>
 
   <!-- Main Content -->
-  <div class="flex">
+  <div class="flex relative p-10">
     <!-- Sidebar -->
-    <aside class="w-64 bg-gray-800 p-4">
+    <aside class="w-64 min-h-screen bg-gray-800 p-4">
       <nav>
         <ul class="space-y-4">
           <li>
@@ -60,12 +60,13 @@
     </aside>
 
     <!-- Feed -->
-    <main class="flex-1 p-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <main class="flex-1 ">
+      <div class="grid grid-cols-1 md:grid-cols-3 p-4 gap-4">
         <!-- Post Card -->
         <div class="bg-gray-800 rounded-lg p-4">
           <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
           <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+          
           <div class="mt-2 flex items-center space-x-2">
             <span class="text-sm text-blue-400">r/news</span>
             <span class="text-sm text-gray-400">and more</span>
@@ -88,6 +89,7 @@
             <span class="text-sm text-blue-400">r/Dodgers</span>
             <span class="text-sm text-gray-400">and more</span>
           </div>
+          
         </div>
       </div>
     </main>

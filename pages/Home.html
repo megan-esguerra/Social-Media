@@ -164,8 +164,8 @@
 
           </div>
         <div class="content-feed">
-          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
-          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+          <h3 class="font-semibold text-lg">Youtube Video</h3>
+          <iframe width="auto" height="500" src="https://www.youtube.com/embed/p0sI6mIhBCg?list=RDp0sI6mIhBCg" title="Lady Gaga, Bruno Mars - Die With A Smile (Lyrics)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
           
           <div class="mt-2 flex items-center space-x-2">
@@ -291,4 +291,42 @@
     </main>
   </div>
 </body>
+<script>
+  //  chat js
+  const chatWindow = document.getElementById('chatWindow');
+    const chatMessages = document.getElementById('chatMessages');
+    const messageInput = document.getElementById('messageInput');
+
+    //chat window
+    function toggleChat() {
+      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'flex';
+      } else {
+        chatWindow.style.display = 'none';
+      }
+    }
+
+    // Send a message
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = messageText;
+        chatMessages.appendChild(messageElement);
+        messageInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
+      }
+    }
+
+    //dropdown 
+    function toggleDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+        dropdownContent.style.display = 'block';
+      } else {
+        dropdownContent.style.display = 'none';
+      }
+    }
+
+</script>
 </html>

@@ -130,6 +130,10 @@
       }
       .feed-card{
         border-top: #323131 solid 0.1px;
+        
+        :hover{
+          background-color: #1c1c1d;
+        }
       }
       .profile-feed{
         height: 20px;
@@ -138,6 +142,16 @@
       }
       hr{
         border-top: #323131 solid 0.1px;
+      }
+      .active-page{
+        background: #394246;
+        width: 90%;
+        padding: 8px;
+        border-radius: 15px;
+      }
+      .font-stack {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, 
+                     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       }
 /* End Luis code */
       /* Kristel code css */

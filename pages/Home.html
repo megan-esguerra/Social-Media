@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reddit Clone</title>
+  <link rel="icon" type="image/png" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -16,7 +17,7 @@
   <header class="bg-reddit border-reddit-nav z-10 fixed w-full px-4 py-2 flex items-center justify-between">
     <div class="flex items-center space-x-2">
       <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
-      <span class="text-2xl font-bold">reddit</span>
+      <span class="text-2xl font-bold font-stack">reddit</span>
     </div>
     <div class="relative">
       <input type="text" placeholder="Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-96 focus:outline-none">
@@ -54,8 +55,8 @@
     <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
       <nav>
         <ul class="space-y-4 ">
-          <li>
-            <a href="../pages/Home.html" class="flex items-center space-x-2 hover:text-orange-500">
+          <li class=" active-page">
+            <a href="../pages/Home.html" class="flex items-center space-x-2">
               <i class='bx bxs-home-alt-2' style='color:#ffffff' ></i>
               <span>Home</span>
             </a>
@@ -86,6 +87,9 @@
             <li>
               <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
             </li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
           </ul>
         </div>
 
@@ -94,6 +98,9 @@
           <ul class="space-y-2">
             <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
             <li><a href="#" class="hover:text-orange-500">Games</a></li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
             <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
           </ul>
         </div>
@@ -106,8 +113,8 @@
         <p>best <i class='bx bxs-chevron-down'></i></p>
       </div>
       <!-- feed card -->
-      <div class="p-4 feed-card">
-        <div class=" rounded-lg ">
+      <div class="p-1 feed-card">
+        <div class=" rounded-lg p-3">
           <div class="flex justify-between">
             <div class="flex gap-2">
               <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
@@ -153,8 +160,8 @@
         </div>
       </div>
       <!-- feed 2 -->
-      <div class="p-4 feed-card">
-        <div class=" rounded-lg ">
+      <div class="p-1 feed-card">
+        <div class=" rounded-lg p-3">
           <div class="flex justify-between">
             <div class="flex gap-2">
               <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
@@ -165,7 +172,7 @@
           </div>
         <div class="content-feed">
           <h3 class="font-semibold text-lg">Youtube Video</h3>
-          <iframe width="100%" height="500" src="https://www.youtube.com/embed/p0sI6mIhBCg?list=RDp0sI6mIhBCg" title="Lady Gaga, Bruno Mars - Die With A Smile (Lyrics)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="100%" height="514" src="https://www.youtube.com/embed/rIOIeoX6QNw" title="CSS clamp() Function Explained in 5 mins. Complete Tutorial for Beginners" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
   
           <div class="mt-4 text-sm flex items-center space-x-4">
@@ -196,8 +203,8 @@
         </div>
       </div>
        <!-- feed 3 -->
-       <div class="p-4 feed-card">
-        <div class=" rounded-lg ">
+       <div class="p-1 feed-card">
+        <div class=" rounded-lg p-3">
           <div class="flex justify-between">
             <div class="flex gap-2">
               <img class="profile-feed" src="../img/scara.png" alt="" srcset="">

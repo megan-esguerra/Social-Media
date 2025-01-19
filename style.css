@@ -101,7 +101,7 @@
         color: white;
       }
 
-
+/* Luis css code */
       .bg-reddit{
         background-color: #141415;
       }
@@ -131,7 +131,15 @@
       .feed-card{
         border-top: #323131 solid 0.1px;
       }
-
+      .profile-feed{
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+      }
+      hr{
+        border-top: #323131 solid 0.1px;
+      }
+/* End Luis code */
       /* Kristel code css */
       .notification-dropdown-content {
         min-width: 340px; 
@@ -262,5 +270,5 @@
         margin-top: -18px;
         padding-bottom: 1rem;
       }
-  
+       
       /* Kristel code css */

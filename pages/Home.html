@@ -53,7 +53,7 @@
     <!-- Sidebar -->
     <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
       <nav>
-        <ul class="space-y-4">
+        <ul class="space-y-4 ">
           <li>
             <a href="../pages/Home.html" class="flex items-center space-x-2 hover:text-orange-500">
               <i class='bx bxs-home-alt-2' style='color:#ffffff' ></i>
@@ -62,13 +62,21 @@
           </li>
           <li>
             <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
                <span>Popular</span></a>
           </li>
           <li>
-            <a href="#" class="hover:text-orange-500"><span>Explore</span></a>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-group'></i>
+              <span>Explore</span></a>
           </li>
           <li>
-            <a href="#" class="hover:text-orange-500"><span>All</span></a>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-cricket-ball'></i>
+              <span>All</span></a>
+          </li>
+          <li>
+            <hr style="width: 90%;">
           </li>
         </ul>
 
@@ -97,19 +105,149 @@
       <div class="p-2 feed-nav">
         <p>best <i class='bx bxs-chevron-down'></i></p>
       </div>
+      <!-- feed card -->
       <div class="p-4 feed-card">
-        <div class=" rounded-lg p-4">
+        <div class=" rounded-lg ">
+          <div class="flex justify-between">
+            <div class="flex gap-2">
+              <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
+              <p class="feed-created">Astr-oIT</p>
+            </div>
+            <i class='bx bx-dots-horizontal-rounded' style='color:#ffffff' ></i>
+
+          </div>
+        <div class="content-feed">
           <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
           <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+        </div>
           
           <div class="mt-2 flex items-center space-x-2">
             <span class="text-sm text-blue-400">r/news</span>
             <span class="text-sm text-gray-400">and more</span>
           </div>
+          <div class="mt-4 text-sm flex items-center space-x-4">
+
+            <div class="bg-zinc-800 text-base p-2 flex rounded-full">
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class=' bx bxs-down-arrow-alt'></i>
+              <span>21k</span>
+            </button>
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class='bx bxs-down-arrow-alt'></i>
+            </button>
+            </div>
+
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-message-rounded' style='color:#ffffff' ></i>
+              <span>23</span>
+            </button>
+            <button class="flex bg-zinc-800 p-3 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-award'></i>
+            </button>
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-share bx-flip-horizontal' style='color:#ffffff' ></i>
+              <span>Share</span>
+            </button>
+          </div>
+          
         </div>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 p-4 gap-4">
+      <!-- feed 2 -->
+      <div class="p-4 feed-card">
+        <div class=" rounded-lg ">
+          <div class="flex justify-between">
+            <div class="flex gap-2">
+              <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
+              <p class="feed-created">Astr-oIT</p>
+            </div>
+            <i class='bx bx-dots-horizontal-rounded' style='color:#ffffff' ></i>
+
+          </div>
+        <div class="content-feed">
+          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
+          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+        </div>
+          
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/news</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+          <div class="mt-4 text-sm flex items-center space-x-4">
+
+            <div class="bg-zinc-800 text-base p-2 flex rounded-full">
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class=' bx bxs-down-arrow-alt'></i>
+              <span>21k</span>
+            </button>
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class='bx bxs-down-arrow-alt'></i>
+            </button>
+            </div>
+
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-message-rounded' style='color:#ffffff' ></i>
+              <span>23</span>
+            </button>
+            <button class="flex bg-zinc-800 p-3 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-award'></i>
+            </button>
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-share bx-flip-horizontal' style='color:#ffffff' ></i>
+              <span>Share</span>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+       <!-- feed 3 -->
+       <div class="p-4 feed-card">
+        <div class=" rounded-lg ">
+          <div class="flex justify-between">
+            <div class="flex gap-2">
+              <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
+              <p class="feed-created">Astr-oIT</p>
+            </div>
+            <i class='bx bx-dots-horizontal-rounded' style='color:#ffffff' ></i>
+
+          </div>
+        <div class="content-feed">
+          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
+          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+        </div>
+          
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/news</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+          <div class="mt-4 text-sm flex items-center space-x-4">
+
+            <div class="bg-zinc-800 text-base p-2 flex rounded-full">
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class=' bx bxs-down-arrow-alt'></i>
+              <span>21k</span>
+            </button>
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class='bx bxs-down-arrow-alt'></i>
+            </button>
+            </div>
+
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-message-rounded' style='color:#ffffff' ></i>
+              <span>23</span>
+            </button>
+            <button class="flex bg-zinc-800 p-3 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-award'></i>
+            </button>
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-share bx-flip-horizontal' style='color:#ffffff' ></i>
+              <span>Share</span>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+       <!-- feed card end -->
+      <div class="grid feed-card grid-cols-1 md:grid-cols-3 p-4 gap-4">
         
         <!-- Post Card -->
         <div class="bg-gray-800 rounded-lg p-4">
@@ -139,6 +277,7 @@
             <span class="text-sm text-gray-400">and more</span>
           </div>
         </div>
+
         <!-- Chat Window -->
         <div class="chat-window" id="chatWindow">
           <div class="chat-header">Open Chat</div>
@@ -151,6 +290,5 @@
       </div>
     </main>
   </div>
-scr
 </body>
 </html>

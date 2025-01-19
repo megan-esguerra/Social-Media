@@ -94,9 +94,64 @@
     .dropdown-content a:hover {
       color: white;
     }
+    .profile-info {
+        margin-left: -275px;
+        position: relative;
+    }
+    .profile-buttons {
+        font-weight: 500;
+        color: #eef1f3;
+        margin-right: 27px;
+    }
+    .profile-buttons button {
+      background-color: none;
+      border-radius: 20px;
+      padding: 9px 13px;
+      margin: 5px;
+      color: #dbe4e9;
+      cursor: pointer;
+      border: none;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-left: 14px;
+      font-size: 14px;
+      
+    }
+    .profile-buttons button.active {
+      background-color: #3d494e;
+    }
+    .profile-buttons button:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    .profile-name {
+      font-size: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: bold;
+      color: #b7cad4;
+    }
+    .profile-username {
+      font-size: 14px;
+      color: #7ba2ad;
+    }
+    .add-image {
+        width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: #2a3236;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -5px;
+    left: 27%;
+    transform: translateX(-50%);
+    }
+    .add-image img {
+      width: 15px;
+      height: 15px;
+    }
   </style>
-  <link rel="stylesheet" href="../style.css">
-  <script src="../javascript.js"></script>
 </head>
 <body class="bg-gray-900 text-white">
   <!-- Header -->
@@ -115,14 +170,14 @@
       <div class="dropdown">
         <img src="../img/avatar.png" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
         <div class="dropdown-content" id="dropdownContent">
-          <a href="../pages/viewprofile.html"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
+          <a href="#" onclick="showProfile()"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <div class="flex relative">
+  <div class="flex relative p-10">
     <!-- Sidebar -->
     <aside class="w-64 min-h-screen bg-gray-800 p-4">
       <nav>
@@ -152,47 +207,41 @@
           <ul class="space-y-2">
             <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
             <li><a href="#" class="hover:text-orange-500">Games</a></li>
-            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+            <li><a href="#" class="hover:text-orange-500">QAs</a></li>
           </ul>
         </div>
       </nav>
     </aside>
 
-    <!-- Feed -->
-    <main class="flex-1 p-10 ">
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 p-4 gap-4">
-        
-        <!-- Post Card -->
-        <div class="bg-gray-800 rounded-lg p-4">
-          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
-          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
-          
-          <div class="mt-2 flex items-center space-x-2">
-            <span class="text-sm text-blue-400">r/news</span>
-            <span class="text-sm text-gray-400">and more</span>
+    <!-- Profile View Section -->
+    <section class="flex-1 flex justify-center items-start mt-10">
+      <aside class="w-64 p-4" id="profileView">
+        <div class="profile-info">
+          <div class="flex items-center justify-center space-x-4">
+            <img src="../img/avatar.png" alt="Profile" class="w-16 h-16 rounded-full">
+            <div>
+              <h2 class="profile-name">Complete_Woidow1781</h2>
+              <p class="profile-username">u/Complete_Window1781</p>
+            </div>
+          </div>
+          <div class="add-image">
+            <img src="../img/add_image.png" alt="Add Image">
           </div>
         </div>
+        <div class="profile-buttons mt-4 flex justify-center space-x-2">
+          <button class="text-sm active" onclick="activateButton(this)">Overview</button>
+          <button class="text-sm" onclick="activateButton(this)">Posts</button>
+          <button class="text-sm" onclick="activateButton(this)">Comments</button>
+          <button class="text-sm" onclick="activateButton(this)">Saved</button>
+          <button class="text-sm" onclick="activateButton(this)">Hidden</button>
+          <button class="text-sm" onclick="activateButton(this)">Upvoted</button>
+          <button class="text-sm" onclick="activateButton(this)">Downvoted</button>
+        </div>
+      </aside>
+    </section>
+  </div>
 
-        <div class="bg-gray-800 rounded-lg p-4">
-          <h3 class="font-semibold text-lg">New Captain America poster</h3>
-          <p class="text-sm text-gray-400">Official IMAX Poster for 'Captain America...</p>
-          <div class="mt-2 flex items-center space-x-2">
-            <span class="text-sm text-blue-400">r/movies</span>
-            <span class="text-sm text-gray-400">and more</span>
-          </div>
-        </div>
-
-        <div class="bg-gray-800 rounded-lg p-4">
-          <h3 class="font-semibold text-lg">Sasaki to Dodgers</h3>
-          <p class="text-sm text-gray-400">Roki Sasaki is a Dodger!</p>
-          <div class="mt-2 flex items-center space-x-2">
-            <span class="text-sm text-blue-400">r/Dodgers</span>
-            <span class="text-sm text-gray-400">and more</span>
-          </div>
-          
-        </div>
-        <!-- Chat Window -->
+  <!-- Chat Window -->
   <div class="chat-window" id="chatWindow">
     <div class="chat-header">Open Chat</div>
     <div class="chat-messages" id="chatMessages"></div>
@@ -206,6 +255,9 @@
     const chatWindow = document.getElementById('chatWindow');
     const chatMessages = document.getElementById('chatMessages');
     const messageInput = document.getElementById('messageInput');
+    const profileView = document.getElementById('profileView');
+    const mainSidebar = document.getElementById('mainSidebar');
+    const mainContent = document.getElementById('mainContent');
 
     //chat window
     function toggleChat() {
@@ -237,9 +289,16 @@
         dropdownContent.style.display = 'none';
       }
     }
+
+    // Add event listener to profile link
+    document.querySelector('.dropdown-content a').addEventListener('click', showProfile);
+
+    // Activate button
+    function activateButton(button) {
+      const buttons = document.querySelectorAll('.profile-buttons button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
   </script>
-      </div>
-    </main>
-  </div>
 </body>
 </html>

@@ -70,11 +70,20 @@
     .dropdown-content {
       display: none;
       position: absolute;
+      top: 30px;
       right: 0;
       background-color: #181c1f;
-      min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      border-radius: 10px;
       z-index: 1;
+      min-width: 160px;
+    }
+    .notification-dropdown-content {
+      min-width: 340px; 
+    }
+    .profile-dropdown-content {
+      min-width: 230px;
+      top: 40px; 
     }
     .dropdown-content a {
       color: lightgray;
@@ -87,12 +96,117 @@
     }
     .dropdown-content a img {
       margin-right: 8px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+    width: 34px;
+    height: 32px;
+    border-radius: 50%;
     }
     .dropdown-content a:hover {
       color: white;
+    }
+    .notification-text {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin-top: 24px;
+    }
+    .notification-subtext {
+      font-size: 14px;
+      text-align: center;
+      color: #6c7e88;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .notification-dropdown {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 16px;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+    }
+    .notification-dropdown img {
+      width: 108px;
+      height: 153px;
+      border-radius: 50%;
+      margin-bottom: 8px;
+      margin-left: 96px;
+      margin-top: 19px;
+    }
+    .notification-header {
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      color: #adc0c9;
+      margin-bottom: 8px;
+    }
+    .notification-divider {
+      height: 3px;
+      background-color: #648efc;
+      margin-bottom: 16px;
+      border-radius: 50px;
+    }
+    .profile-info {
+      margin-left: -275px;
+      position: relative;
+    }
+    .profile-buttons {
+      font-weight: 500;
+      color: #eef1f3;
+      margin-right: 27px;
+    }
+    .profile-buttons button {
+      background-color: none;
+      border-radius: 20px;
+      padding: 9px 13px;
+      margin: 5px;
+      color: #dbe4e9;
+      cursor: pointer;
+      border: none;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-left: 14px;
+      font-size: 14px;
+    }
+    .profile-buttons button.active {
+      background-color: #3d494e;
+    }
+    .profile-buttons button:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    .profile-name {
+      font-size: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: bold;
+      color: #b7cad4;
+    }
+    .profile-username {
+      color: #748791;
+      font-size: 12px;
+     
+    }
+    .add-image {
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      background-color: #2a3236;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: -5px;
+      left: 27%;
+      transform: translateX(-50%);
+    }
+    .add-image img {
+      width: 15px;
+      height: 15px;
+    }
+    .profile-dropdown-username {
+      color: #748791;
+      font-size: 12px;
+      margin-left: 60px;
+      margin-top: -18px;
+      padding-bottom: 1rem;
     }
   </style>
 </head>
@@ -106,14 +220,28 @@
     <div class="relative">
       <input type="text" placeholder="Search Reddit" class="bg-gray-700 text-white rounded-full px-4 py-1 w-64 focus:outline-none">
     </div>
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-6">
       <!-- chat -->
-      <button class="chat-button" onclick="toggleChat()">💬</button>
+      <img src="../img/chat-bubble.png" alt="Chat" class="w-6 h-6 cursor-pointer" onclick="toggleChat()">
+      <!-- Notification Icon -->
+      <div class="dropdown">
+        <img src="../img/notification.png" alt="Notification" class="w-5 h-5 cursor-pointer" onclick="toggleNotificationDropdown()">
+        <div class="dropdown-content notification-dropdown-content" id="notificationDropdownContent">
+          <div class="notification-dropdown">
+            <div class="notification-header">Notifications</div>
+            <div class="notification-divider"></div>
+            <img src="../img/snoovatar-full-hi.png" alt="Profile Icon">
+            <div class="notification-text">Turn on email digest</div>
+            <div class="notification-subtext">Stay in the loop on content from communities you love right in your email inbox</div>
+          </div>
+        </div>
+      </div>
       <!-- Profile Dropdown -->
       <div class="dropdown">
         <img src="../img/avatar.png" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
-        <div class="dropdown-content" id="dropdownContent">
-          <a href="#"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
+        <div class="dropdown-content profile-dropdown-content" id="dropdownContent">
+          <a href="../pages/viewprofile.html"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
+          <div class="profile-dropdown-username">u/Complete_Window1782</div>
         </div>
       </div>
     </div>
@@ -126,7 +254,7 @@
       <nav>
         <ul class="space-y-4">
           <li>
-            <a href="#" class="flex items-center space-x-2 hover:text-orange-500">
+            <a href="../pages/Home.html" class="flex items-center space-x-2 hover:text-orange-500">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 12l18-12v24z"/></svg>
               <span>Home</span>
             </a>
@@ -186,16 +314,18 @@
             <span class="text-sm text-blue-400">r/Dodgers</span>
             <span class="text-sm text-gray-400">and more</span>
           </div>
-          
         </div>
         <!-- Chat Window -->
-  <div class="chat-window" id="chatWindow">
-    <div class="chat-header">Open Chat</div>
-    <div class="chat-messages" id="chatMessages"></div>
-    <div class="chat-input">
-      <input type="text" id="messageInput" placeholder="Type a message..." />
-      <button onclick="sendMessage()">Send</button>
-    </div>
+        <div class="chat-window" id="chatWindow">
+          <div class="chat-header">Open Chat</div>
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 
   <script>
@@ -233,9 +363,16 @@
         dropdownContent.style.display = 'none';
       }
     }
+
+    // Notification Dropdown
+    function toggleNotificationDropdown() {
+      const notificationDropdownContent = document.getElementById('notificationDropdownContent');
+      if (notificationDropdownContent.style.display === 'none' || notificationDropdownContent.style.display === '') {
+        notificationDropdownContent.style.display = 'block';
+      } else {
+        notificationDropdownContent.style.display = 'none';
+      }
+    }
   </script>
-      </div>
-    </main>
-  </div>
 </body>
 </html>

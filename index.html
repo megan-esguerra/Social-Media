@@ -88,10 +88,57 @@
     </aside>
 
     <!-- Feed -->
-    <main >
-      <div class="p-2 feed-nav">
-        <p>best <i class='bx bxs-chevron-down'></i></p>
+    <div class="carousel-reddit w-full  py-8">
+      <div class="relative">
+        <!-- Carousel Container -->
+        <div id="carousel" class="carousel flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+          <!-- Item 1 -->
+          <div class="min-w-[300px] bg-gray-800 rounded-lg p-4 snap-center">
+            <img src="https://via.placeholder.com/300x150" alt="Trump inauguration" class="rounded-lg">
+            <h2 class="text-lg font-bold mt-4">Trump inauguration</h2>
+            <p class="text-sm text-gray-400">Donald Trump is sworn in as the 47th president...</p>
+            <span class="text-xs text-gray-500">r/pics and more</span>
+          </div>
+          <!-- Item 2 -->
+          <div class="min-w-[300px] bg-gray-800 rounded-lg p-4 snap-center">
+            <img src="https://via.placeholder.com/300x150" alt="Celtics defeat Warriors" class="rounded-lg">
+            <h2 class="text-lg font-bold mt-4">Celtics defeat Warriors</h2>
+            <p class="text-sm text-gray-400">The Celtics hand the Warriors their most...</p>
+            <span class="text-xs text-gray-500">r/sports and more</span>
+          </div>
+          <!-- Item 3 -->
+          <div class="min-w-[300px] bg-gray-800 rounded-lg p-4 snap-center">
+            <img src="https://via.placeholder.com/300x150" alt="Ben Johnson HC deal" class="rounded-lg">
+            <h2 class="text-lg font-bold mt-4">Ben Johnson HC deal</h2>
+            <p class="text-sm text-gray-400">[Schefter] Bear down: Chicago is finalizing...</p>
+            <span class="text-xs text-gray-500">r/nfl and more</span>
+          </div>
+          <!-- Item 4 -->
+          <div class="min-w-[300px] bg-gray-800 rounded-lg p-4 snap-center">
+            <img src="https://via.placeholder.com/300x150" alt="Costco strike" class="rounded-lg">
+            <h2 class="text-lg font-bold mt-4">Costco strike</h2>
+            <p class="text-sm text-gray-400">Costco's unionized workers...</p>
+            <span class="text-xs text-gray-500">r/news and more</span>
+          </div>
+        </div>
+  
+        <!-- Left Button -->
+        <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600">
+          &larr;
+        </button>
+        <!-- Right Button -->
+        <button id="nextBtn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600">
+          &rarr;
+        </button>
       </div>
+    </div>
+  
+    <script src="carousel.js"></script>
+    <div class="p-2 feed-nav">
+      <p>best <i class='bx bxs-chevron-down'></i></p>
+    </div>
+    <div class="guest-main" >
+      
       <!-- feed card -->
       <div class="p-1 feed-card">
         <div class=" rounded-lg p-3">
@@ -271,7 +318,7 @@
           </div>
         </div>
       </div>
-    </main>
+    </div>
   </div>
 </body>
 <script>

@@ -242,8 +242,36 @@
       .sidebar-border{
         border-right: #5c5b5b solid 0.9px;
       }
+      .carousel-reddit{
+        right: 0;
+        width: 95%;
+        padding-top: 5rem;
+        padding-left: 21rem;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;  /* Safari and Chrome */
+      }
+      
+      
+      
+      
+      /* For Firefox */
+      .carousel {
+        scrollbar-width: none; /* Hide scrollbar */
+      }
+      
+    
+      .guest-main{
+        right: 0;
+        width: 70%;
+        padding-left: 21rem;
+      }
       main{
-        
         right: 0;
         width: 70%;
         padding-top: 4rem;

@@ -731,4 +731,28 @@ aside#profileView {
 .dropdown-content.notification-dropdown-content {
   top: 35px; /* Adjust the value to move the dropdown lower */
 }
+  .profile-buttons-hr {
+    width: 90%;
+    margin: 10px auto;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+  .no-posts {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .no-posts img {
+    width: 63px;
+    height: auto;
+    margin-left: 77px;
+  }
+  
+  .no-posts-text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #bfcac9;
+    margin-top: 10px;
+  }
 /* Kristel code enddsssss*/

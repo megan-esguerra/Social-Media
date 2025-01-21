@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - Reddit Style</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Card body layout */
+        .card-body {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px; /* Add padding for better spacing */
+            position: relative; /* Make the card body relative for absolute positioning of the button */
+        }
+
+        /* Image styling - round image */
+        .card-img-top {
+            width: 60px; /* Set width of image */
+            height: 60px; /* Set height of image */
+            object-fit: cover; /* Ensure the image fits in the circle */
+            border-radius: 50%; /* Make the image circular */
+            margin-right: 15px; /* Add space between image and text */
+        }
+
+        /* Title and description */
+        .card-title {
+            font-size: 1.1rem; /* Adjust the size of the card title */
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem; /* Smaller text under the title */
+            color: #6c757d; /* Lighter text color */
+            margin-bottom: 10px; /* Space below the subtitle */
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Button styling */
+        .btn-read-more {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 25px;
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-read-more:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Explore</h1>
+        
+        <!-- Recommended for You Section -->
+        <div class="mb-4">
+            <h2 class="text-start">Recommended for You</h2>
+        </div>
+        
+        <div class="row ">
+            <!-- Card 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/img/atabs.png" class="card-img-top" alt="Post Image">
+                        <div>
+                            <h5 class="card-title">youngpeopleyoutube</h5>
+                            <h6 class="card-subtitle">1M members</h6> <!-- Smaller text below the title -->
+                            <p class="card-text">Follow hilarious commentary from the youngest social media critics, bringing fresh takes and laughs to every video.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/img/gta.png" class="card-img-top" alt="Post Image">
+                        <div>
+                            <h5 class="card-title">GTA</h5>
+                            <h6 class="card-subtitle">3.1M members</h6> <!-- Smaller text below the title -->
+                            <p class="card-text">Reddit's premier GTA community, where fans share news, memes, and everything related to the iconic game.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/img/nem.gif" class="card-img-top" alt="Post Image">
+                        <div>
+                            <h5 class="card-title">zelda</h5>
+                            <h6 class="card-subtitle">3.2M members</h6> <!-- Smaller text below the title -->
+                            <p class="card-text">Discuss the lore, characters, and gameplay of one of Nintendo's most beloved franchises, from Ocarina of Time to Breath of the Wild.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                    </div>
+                </div>
+            </div>
+            <!--Card 4-->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/img/cod.jpg" class="card-img-top" alt="Post Image">
+                        <div>
+                            <h5 class="card-title">ModernWarfarell</h5>
+                            <h6 class="card-subtitle">5.3M members</h6> <!-- Smaller text below the title -->
+                            <p class="card-text">Discuss all things related to the first-person shooter Call of Duty: Moern Warfare ll.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h2 class="text-start">Sciences</h2>
+            </div>
+
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/img/aging.jpeg" class="card-img-top" alt="Post Image">
+                            <div>
+                                <h5 class="card-title">Aging</h5>
+                                <h6 class="card-subtitle">31K members</h6> <!-- Smaller text below the title -->
+                                <p class="card-text"> </p>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/img/bio.png" class="card-img-top" alt="Post Image">
+                            <div>
+                                <h5 class="card-title">Biohackers</h5>
+                                <h6 class="card-subtitle">332K members</h6> <!-- Smaller text below the title -->
+                                <p class="card-text">Take your health and wellness into your own hands. Get curious and creative.</p>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/img/data.jpg" class="card-img-top" alt="Post Image">
+                            <div>
+                                <h5 class="card-title">dataisbeautiful</h5>
+                                <h6 class="card-subtitle">21M members</h6> <!-- Smaller text below the title -->
+                                <p class="card-text">Endteck die Schonheit con Daten durch aussagekraftige und Diagramme.</p>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Card 4-->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/img/space.png" class="card-img-top" alt="Post Image">
+                            <div>
+                                <h5 class="card-title">SpaceLounge</h5>
+                                <h6 class="card-subtitle">338K members</h6> <!-- Smaller text below the title -->
+                                <p class="card-text">Werde Teil einer netten Community von Weltraum-Fans und diskutiere alles rund um SpaceX.</p>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="text-start">Arts</h2>
+                </div>
+
+                <div class="row">
+                    <!-- Card 1 -->
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="/img/p.png" class="card-img-top" alt="Post Image">
+                                <div>
+                                    <h5 class="card-title">Cameras</h5>
+                                    <h6 class="card-subtitle">213K members</h6> <!-- Smaller text below the title -->
+                                    <p class="card-text">Chat about your favorite cameras,lenses,and accessories with other photographers. </p>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="/img/h.png" class="card-img-top" alt="Post Image">
+                                <div>
+                                    <h5 class="card-title">photography</h5>
+                                    <h6 class="card-subtitle">5.5M members</h6> <!-- Smaller text below the title -->
+                                    <p class="card-text">Halte den Moment fest und teile deine Fotos mit anderen Fotografen.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="/img/o.png" class="card-img-top" alt="Post Image">
+                                <div>
+                                    <h5 class="card-title">PhotoshopRequest</h5>
+                                    <h6 class="card-subtitle">1.3M members</h6> <!-- Smaller text below the title -->
+                                    <p class="card-text">Get help with all your photo diting needs from a supportive community.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Card 4-->
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="/img/d.jpg" class="card-img-top" alt="Post Image">
+                                <div>
+                                    <h5 class="card-title">drawing</h5>
+                                    <h6 class="card-subtitle">5.5M members</h6> <!-- Smaller text below the title -->
+                                    <p class="card-text">Hone your skills and share your art with a community pf creative minds.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="mb-4">
+                        <h2 class="text-start">Top globally</h2>
+                    </div>
+    
+                    <div class="row">
+                        <!-- Card 1 -->
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="/img/t.png" class="card-img-top" alt="Post Image">
+                                    <div>
+                                        <h5 class="card-title">mildyinfuriating</h5>
+                                        <h6 class="card-subtitle">9M members</h6> <!-- Smaller text below the title -->
+                                        <p class="card-text">Find comfort in knowing you're not alone in life's minor irritations.</p>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="/img/f.png" class="card-img-top" alt="Post Image">
+                                    <div>
+                                        <h5 class="card-title">AskReddit</h5>
+                                        <h6 class="card-subtitle">51M members</h6> <!-- Smaller text below the title -->
+                                        <p class="card-text">The go-to subreddit to ask and answer thought-provoking questions.</p>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="/img/l.png" class="card-img-top" alt="Post Image">
+                                    <div>
+                                        <h5 class="card-title">pics</h5>
+                                        <h6 class="card-subtitle">31M members</h6> <!-- Smaller text below the title -->
+                                        <p class="card-text">Discover a new perspective on the world through captivating photography.</p>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Card 4-->
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="/img/we.png" class="card-img-top" alt="Post Image">
+                                    <div>
+                                        <h5 class="card-title">mildlyinteresting</h5>
+                                        <h6 class="card-subtitle">24M members</h6> <!-- Smaller text below the title -->
+                                        <p class="card-text">Appreciate the small things in life that are just a little bit interesting.</p>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-read-more">Join</a>
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

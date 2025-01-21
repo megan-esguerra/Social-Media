@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Clone</title>
+  <link rel="icon" type="image/png" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../javascript.js"></script>
+</head>
+<body class="bg-reddit text-white">
+  <!-- Header -->
+  <header class="bg-reddit border-reddit-nav z-10 fixed w-full px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
+      <span class="text-2xl font-bold font-stack">reddit</span>
+    </div>
+    <div class="relative w-96">
+      <input type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
+    </div>
+    <div class="flex items-center space-x-6">
+      <!-- chat -->
+      <img src="../img/chat-bubble.png" alt="Chat" class="w-6 h-6 cursor-pointer" onclick="toggleChat()">
+      <!-- Create Feed -->
+      <i class='bx bx-plus'>Create</i>
+      <!-- Notification Icon -->
+      <div class="dropdown">
+        <img src="../img/notification.png" alt="Notification" class="w-5 h-5 cursor-pointer" onclick="toggleNotificationDropdown()">
+        <div class="dropdown-content notification-dropdown-content" id="notificationDropdownContent">
+          <div class="notification-dropdown">
+            <div class="notification-header">Notifications</div>
+            <div class="notification-divider"></div>
+            <img src="../img/snoovatar-full-hi.png" alt="Profile Icon">
+            <div class="notification-text">Turn on email digest</div>
+            <div class="notification-subtext">Stay in the loop on content from communities you love right in your email inbox</div>
+          </div>
+        </div>
+      </div>
+      <!-- Profile Dropdown -->
+      <div class="dropdown">
+        <img src="../img/avatar.png" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
+        <div class="dropdown-content profile-dropdown-content" id="dropdownContent">
+          <a href="../pages/viewprofile.html"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
+          <div class="profile-dropdown-username">u/Complete_Window1782</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="flex relative ">
+    <!-- Sidebar -->
+    <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
+      <nav>
+        <ul class="space-y-4">
+          <li class="active-page">
+            <a href="../pages/Home.html" class="flex items-center space-x-2">
+              <i class='bx bxs-home-alt-2' style='color:#ffffff'></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff'></i>
+              <span>Popular</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-group'></i>
+              <span>Explore</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-cricket-ball'></i>
+              <span>All</span>
+            </a>
+          </li>
+          <li>
+            <hr style="width: 90%;">
+          </li>
+        </ul>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Recent</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
+            </li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
+            <li><a href="#" class="hover:text-orange-500">Games</a></li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Profile View Section -->
+    <section class="flex-1 flex justify-center items-start mt-10">
+      <aside class="w-64 p-4" id="profileView">
+        <div class="profile-info">
+          <div class="flex items-center justify-center space-x-4">
+            <img src="../img/avatar.png" alt="Profile" class="w-16 h-16 rounded-full">
+            <div>
+              <h2 class="profile-name">Complete_Woidow1781</h2>
+              <p class="profile-username">u/Complete_Window1781</p>
+            </div>
+          </div>
+          <div class="add-image">
+            <img src="../img/add_image.png" alt="Add Image">
+          </div>
+        </div>
+        <div class="profile-buttons mt-4 flex justify-center space-x-2">
+          <button class="text-sm active" onclick="activateButton(this)">Overview</button>
+          <button class="text-sm" onclick="activateButton(this)">Posts</button>
+          <button class="text-sm" onclick="activateButton(this)">Comments</button>
+          <button class="text-sm" onclick="activateButton(this)">Saved</button>
+          <button class="text-sm" onclick="activateButton(this)">Hidden</button>
+          <button class="text-sm" onclick="activateButton(this)">Upvoted</button>
+          <button class="text-sm" onclick="activateButton(this)">Downvoted</button>
+        </div>
+      </aside>
+      <div class="profile-card">
+        <div class="header">
+          <h2>Complete_Window1781</h2>
+          <div class="share-icon">📤</div>
+        </div>
+
+        <!-- Share Button -->
+        <button class="share-button">
+          <i class='bx bx-share-alt'></i> Share
+        </button>
+
+        <div class="stats">
+          <div>
+            <div class="value">1</div>
+            <div class="label">Post karma</div>
+          </div>
+          <div>
+            <div class="value">0</div>
+            <div class="label">Comment karma</div>
+          </div>
+          <div>
+            <div class="value">Jan 18, 2025</div>
+            <div class="label">(Cake day)</div>
+          </div>
+          <div>
+            <div class="value">0</div>
+            <div class="label">Gold earned</div>
+          </div>
+        </div>
+
+        <div class="achievements">
+          <h3>Achievements</h3>
+          <div class="badge-container">
+            <img src="../img/badge1.png" alt="Achievement 1">
+            <img src="../img/badge1.png" alt="Achievement 2">
+            <img src="../img/badge3.png" alt="Achievement 3">
+            <div class="badge-text">
+              <span>Banana Baby</span>, 
+              <span>Banana Beginner</span>, 
+              <span>Joined Reddit</span>, 
+              <span>+1 more</span>
+            </div>
+          </div>
+          <div class="view-all-container">
+            <div class="unlocked-text">4 unlocked</div>
+            <button class="view-all-button">View All</button>
+          </div>
+          <div class="divider"></div>
+        </div>
+        <div class="settings">
+          <h3>Settings</h3>
+          <button>Edit Profile</button>
+          <button>Style Avatar</button>
+          <button>Mod Settings</button>
+        </div>
+
+        <div class="links">
+          <button>+ Add Social Link</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Chat Window -->
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">Open Chat</div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Activate button
+    function activateButton(button) {
+      const buttons = document.querySelectorAll('.profile-buttons button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
+
+    // Toggle chat window
+    function toggleChat() {
+      const chatWindow = document.getElementById('chatWindow');
+      chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Send a message
+    function sendMessage() {
+      const messageInput = document.getElementById('messageInput');
+      const chatMessages = document.getElementById('chatMessages');
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = messageText;
+        chatMessages.appendChild(messageElement);
+        messageInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
+      }
+    }
+
+    // Toggle profile dropdown
+    function toggleDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

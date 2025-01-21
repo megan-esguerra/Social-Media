@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Clone</title>
+  <link rel="icon" type="image/png" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ 
+  <link rel="stylesheet" href="./style.css">
+  <script src="./javascript.js"></script>
+</head>
+<body class="bg-reddit text-white">
+  <!-- Header -->
+  <header class="bg-reddit border-reddit-nav z-10 fixed w-full px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
+      <span class="text-2xl font-bold font-stack">reddit</span>
+    </div>
+    <div class="relative w-96">
+      <input type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button class="bg-gray-700 px-3 py-1 rounded-full">Get App</button>
+      <button class="bg-orange-500 px-3 py-1 rounded-full">Log In</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="">
+    <!-- Sidebar -->
+    <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
+      <nav>
+        <ul class="space-y-4 ">
+          <li class=" active-page">
+            <a href="../pages/Home.html" class="flex items-center space-x-2">
+              <i class='bx bxs-home-alt-2' style='color:#ffffff' ></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
+               <span>Popular</span></a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-group'></i>
+              <span>Explore</span></a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-cricket-ball'></i>
+              <span>All</span></a>
+          </li>
+          <li>
+            <hr style="width: 90%;">
+          </li>
+        </ul>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Recent</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
+            </li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
+            <li><a href="#" class="hover:text-orange-500">Games</a></li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Feed -->
+    <main >
+      <div class="p-2 feed-nav">
+        <p>best <i class='bx bxs-chevron-down'></i></p>
+      </div>
+      <!-- feed card -->
+      <div class="p-1 feed-card">
+        <div class=" rounded-lg p-3">
+          <div class="flex justify-between">
+            <div class="flex gap-2">
+              <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
+              <p class="feed-created">Astr-oIT</p>
+            </div>
+            <i class='bx bx-dots-horizontal-rounded' style='color:#ffffff' ></i>
+
+          </div>
+        <div class="content-feed">
+          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
+          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+        </div>
+          
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/news</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+          <div class="mt-4 text-sm flex items-center space-x-4">
+
+            <div class="bg-zinc-800 text-base p-2 flex rounded-full">
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class=' bx bxs-down-arrow-alt'></i>
+              <span>21k</span>
+            </button>
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class='bx bxs-down-arrow-alt'></i>
+            </button>
+            </div>
+
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-message-rounded' style='color:#ffffff' ></i>
+              <span>23</span>
+            </button>
+            <button class="flex bg-zinc-800 p-3 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-award'></i>
+            </button>
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-share bx-flip-horizontal' style='color:#ffffff' ></i>
+              <span>Share</span>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+      <!-- feed 2 -->
+      <div class="p-1 feed-card">
+        <div class=" rounded-lg p-3">
+          <div class="flex justify-between">
+            <div class="flex gap-2">
+              <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
+              <p class="feed-created">Astr-oIT</p>
+            </div>
+            <i class='bx bx-dots-horizontal-rounded' style='color:#ffffff' ></i>
+
+          </div>
+        <div class="content-feed">
+          <h3 class="font-semibold text-lg">Youtube Video</h3>
+          <iframe width="100%" height="514" src="https://www.youtube.com/embed/rIOIeoX6QNw" title="CSS clamp() Function Explained in 5 mins. Complete Tutorial for Beginners" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+  
+          <div class="mt-4 text-sm flex items-center space-x-4">
+
+            <div class="bg-zinc-800 text-base p-2 flex rounded-full">
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class=' bx bxs-down-arrow-alt'></i>
+              <span>21k</span>
+            </button>
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class='bx bxs-down-arrow-alt'></i>
+            </button>
+            </div>
+
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-message-rounded' style='color:#ffffff' ></i>
+              <span>23</span>
+            </button>
+            <button class="flex bg-zinc-800 p-3 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-award'></i>
+            </button>
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-share bx-flip-horizontal' style='color:#ffffff' ></i>
+              <span>Share</span>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+       <!-- feed 3 -->
+       <div class="p-1 feed-card">
+        <div class=" rounded-lg p-3">
+          <div class="flex justify-between">
+            <div class="flex gap-2">
+              <img class="profile-feed" src="../img/scara.png" alt="" srcset="">
+              <p class="feed-created">Astr-oIT</p>
+            </div>
+            <i class='bx bx-dots-horizontal-rounded' style='color:#ffffff' ></i>
+
+          </div>
+        <div class="content-feed">
+          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
+          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+        </div>
+          
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/news</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+          <div class="mt-4 text-sm flex items-center space-x-4">
+
+            <div class="bg-zinc-800 text-base p-2 flex rounded-full">
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class=' bx bxs-down-arrow-alt'></i>
+              <span>21k</span>
+            </button>
+            <button class="flex items-center space-x-1  hover:text-white">
+              <i class='bx bxs-down-arrow-alt'></i>
+            </button>
+            </div>
+
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-message-rounded' style='color:#ffffff' ></i>
+              <span>23</span>
+            </button>
+            <button class="flex bg-zinc-800 p-3 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-award'></i>
+            </button>
+            <button class="flex bg-zinc-800 p-2 rounded-full items-center space-x-1 text-gray-400 hover:text-white">
+              <i class='bx bx-share bx-flip-horizontal' style='color:#ffffff' ></i>
+              <span>Share</span>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+       <!-- feed card end -->
+      <div class="grid feed-card grid-cols-1 md:grid-cols-3 p-4 gap-4">
+        
+        <!-- Post Card -->
+        <div class="bg-gray-800 rounded-lg p-4">
+          <h3 class="font-semibold text-lg">SCOTUS upholds TikTok ban</h3>
+          <p class="text-sm text-gray-400">Supreme Court upholds law banning TikTok...</p>
+          
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/news</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-4">
+          <h3 class="font-semibold text-lg">New Captain America poster</h3>
+          <p class="text-sm text-gray-400">Official IMAX Poster for 'Captain America...</p>
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/movies</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-4">
+          <h3 class="font-semibold text-lg">Sasaki to Dodgers</h3>
+          <p class="text-sm text-gray-400">Roki Sasaki is a Dodger!</p>
+          <div class="mt-2 flex items-center space-x-2">
+            <span class="text-sm text-blue-400">r/Dodgers</span>
+            <span class="text-sm text-gray-400">and more</span>
+          </div>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow">
+          <div class="chat-header">Open Chat</div>
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+<script>
+  //  chat js
+  const chatWindow = document.getElementById('chatWindow');
+    const chatMessages = document.getElementById('chatMessages');
+    const messageInput = document.getElementById('messageInput');
+
+    //chat window
+    function toggleChat() {
+      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'flex';
+      } else {
+        chatWindow.style.display = 'none';
+      }
+    }
+
+    // Send a message
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = messageText;
+        chatMessages.appendChild(messageElement);
+        messageInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
+      }
+    }
+
+    //dropdown 
+    function toggleDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+        dropdownContent.style.display = 'block';
+      } else {
+        dropdownContent.style.display = 'none';
+      }
+    }
+
+</script>
+</html>

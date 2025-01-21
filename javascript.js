@@ -44,3 +44,20 @@ var swiper = new Swiper(".centered-slide-carousel", {
         window.history.pushState({},"", newUrl)
       }
     });
+
+    // Resources javascript
+
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const button = dropdown.previousElementSibling;
+      
+      // Toggle visibility
+      if (dropdown.classList.contains('hidden')) {
+        dropdown.classList.remove('hidden');
+        button.classList.add('active');
+      } else {
+        dropdown.classList.add('hidden');
+        button.classList.remove('active');
+      }
+    }
+    

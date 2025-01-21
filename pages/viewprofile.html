@@ -137,64 +137,98 @@
           <button class="text-sm" onclick="activateButton(this)">Downvoted</button>
         </div>
       </aside>
-      <div class="profile-card">
-        <div class="header">
-          <h2>Complete_Window1781</h2>
-          <div class="share-icon">📤</div>
-        </div>
+      <div class="profile-card-wrapper">
+        <div class="profile-card">
+          <div class="header">
+            <h2>Complete_Window1781</h2>
+            <div class="share-icon">📤</div>
+          </div>
 
-        <!-- Share Button -->
-        <button class="share-button">
-          <i class='bx bx-share-alt'></i> Share
-        </button>
+          <!-- Share Button -->
+          <button class="share-button">
+            <i class='bx bx-share-alt'></i> Share
+          </button>
 
-        <div class="stats">
-          <div>
-            <div class="value">1</div>
-            <div class="label">Post karma</div>
-          </div>
-          <div>
-            <div class="value">0</div>
-            <div class="label">Comment karma</div>
-          </div>
-          <div>
-            <div class="value">Jan 18, 2025</div>
-            <div class="label">(Cake day)</div>
-          </div>
-          <div>
-            <div class="value">0</div>
-            <div class="label">Gold earned</div>
-          </div>
-        </div>
-
-        <div class="achievements">
-          <h3>Achievements</h3>
-          <div class="badge-container">
-            <img src="../img/badge1.png" alt="Achievement 1">
-            <img src="../img/badge1.png" alt="Achievement 2">
-            <img src="../img/badge3.png" alt="Achievement 3">
-            <div class="badge-text">
-              <span>Banana Baby</span>, 
-              <span>Banana Beginner</span>, 
-              <span>Joined Reddit</span>, 
-              <span>+1 more</span>
+          <div class="stats">
+            <div>
+              <div class="value">1</div>
+              <div class="label">Post karma</div>
+            </div>
+            <div>
+              <div class="value">0</div>
+              <div class="label">Comment karma</div>
+            </div>
+            <div>
+              <div class="value">Jan 18, 2025</div>
+              <div class="label">(Cake day)</div>
+            </div>
+            <div>
+              <div class="value">0</div>
+              <div class="label">Gold earned</div>
             </div>
           </div>
-          <div class="view-all-container">
-            <div class="unlocked-text">4 unlocked</div>
-            <button class="view-all-button">View All</button>
-          </div>
-          <div class="divider"></div>
-        </div>
-        <div class="settings">
-          <h3>Settings</h3>
-          <button>Edit Profile</button>
-          <button>Style Avatar</button>
-          <button>Mod Settings</button>
-        </div>
 
-        <div class="links">
-          <button>+ Add Social Link</button>
+          <div class="achievements">
+            <h3>Achievements</h3>
+            <div class="badge-container">
+              <img src="../img/badge1.png" alt="Achievement 1">
+              <img src="../img/badge1.png" alt="Achievement 2">
+              <img src="../img/badge3.png" alt="Achievement 3">
+              <div class="badge-text">
+                <span>Banana Baby</span>, 
+                <span>Banana Beginner</span>, 
+                <span>Joined Reddit</span>, 
+                <span>+1 more</span>
+              </div>
+            </div>
+            <div class="view-all-container">
+              <div class="unlocked-text">4 unlocked</div>
+              <button class="view-all-button">View All</button>
+            </div>
+            <div class="divider"></div>
+
+          </div>
+          
+        
+          <div class="settings">
+            <h3>SETTINGS</h3>
+            <div class="settings-item">
+              <img src="../img/avatar.png" alt="Profile Icon">
+              <div>
+                <span class="settings-text">Profile</span>
+                <button>Edit Profile</button>
+                <p>Customize your profile</p>
+              </div>
+            </div>
+            <div class="settings-item">
+              <img src="../img/Aavataricon.png" alt="Avatar Icon">
+              <div>
+                <span class="settings-text">Avatar</span>
+                <button>Style Avatar</button>
+                <p>Customize and style</p>
+              </div>
+            </div>
+            <div class="settings-item">
+              <img src="../img/mod.png" alt="Moderation Icon">
+              <div>
+                <span class="settings-text">Moderation</span>
+                <button>Mod Settings</button>
+                <p>Moderation tools</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+<h3 class="links-title">LINKS</h3>
+<div class="links">
+  <button class="add-social-link-button"><i class='bx bx-plus'></i> Add Social Link</button>
+</div>
+<div class="divider"></div>
+<h3 class="trophy-title">TROPHY CASE</h3>
+<div class="trophy-case">
+  <img src="../img/avatar.png" alt="Trophy Icon" class="trophy-icon">
+  <span class="trophy-text">New User</span>
+</div>
         </div>
       </div>
     </section>
@@ -224,7 +258,7 @@
       chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Send a message
+    // Send a messages
     function sendMessage() {
       const messageInput = document.getElementById('messageInput');
       const chatMessages = document.getElementById('chatMessages');
@@ -238,7 +272,7 @@
       }
     }
 
-    // Toggle profile dropdown
+    // Toggle profile dropdownnnnn
     function toggleDropdown() {
       const dropdownContent = document.getElementById('dropdownContent');
       dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';

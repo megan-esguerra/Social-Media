@@ -103,10 +103,10 @@
 
 /* Luis css code */
       .bg-reddit{
-        background-color: #141415;
+        background-color: #0e1113;
       }
       .reddit-aside{
-        background-color: #141415;
+        background-color: #0e1113;
         padding-top: 80px;
         padding-left: 30px;
       }
@@ -132,7 +132,7 @@
         border-top: #323131 solid 0.1px;
         
         :hover{
-          background-color: #1c1c1d;
+          background-color: #181c1f;
         }
       }
       .profile-feed{
@@ -152,6 +152,9 @@
       .font-stack {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, 
                      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      }
+      .bx .bx-plus{
+        font-size: larger;
       }
 /* End Luis code */
       /* Kristel code css */

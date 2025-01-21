@@ -210,6 +210,7 @@ hr{
         font-size: 12px;
         font-weight: bold;
         color: #4a5b68;
+        display: block;
       }
       .feed-card{
         border-top: #323131 solid 0.1px;

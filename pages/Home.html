@@ -16,11 +16,14 @@
   <!-- Header -->
   <header class="bg-reddit border-reddit-nav z-10 fixed w-full px-4 py-2 flex items-center justify-between">
     <div class="flex items-center space-x-2">
-      <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
+      <a href="../index.html" class="flex items-center">
+        <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
       <span class="text-2xl font-bold font-stack">reddit</span>
+      </a>
+      
     </div>
     <div class="relative w-96">
-      <input type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <input id="search-bar" type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
       <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
     </div>
     <div class="flex items-center space-x-6">
@@ -66,12 +69,12 @@
             </a>
           </li>
           <li>
-            <a href="#" class="hover:text-orange-500">
+            <a href="popular.html" class="hover:text-orange-500">
               <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
                <span>Popular</span></a>
           </li>
           <li>
-            <a href="#" class="hover:text-orange-500">
+            <a href="Explore.html" class="hover:text-orange-500">
               <i class='bx bx-group'></i>
               <span>Explore</span></a>
           </li>
@@ -303,17 +306,37 @@
             <span class="text-sm text-blue-400">r/Dodgers</span>
             <span class="text-sm text-gray-400">and more</span>
           </div>
-        </div>
+          <script>
+            // search bar
+document.addEventListener("DOMContentLoaded", function() {
+  const searchBar = document.getElementById('search-bar');
+  const feedCards = document.querySelectorAll('.feed-card');
 
+  searchBar.addEventListener('input', function() {
+    const query = searchBar.value.toLowerCase();
+
+    feedCards.forEach(card => {
+      const content = card.textContent.toLowerCase();
+      if (content.includes(query)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+          </script>
+        </div>
+  </main>
         <!-- Chat Window -->
-<div class="chat-window" id="chatWindow" style="display: none;">
-  <div class="chat-header">Chat</div>
-  <div class="chat-messages" id="chatMessages"></div>
-  <div class="chat-input">
-    <input type="text" id="messageInput" placeholder="Type a message..." />
-    <button onclick="sendMessage()">Send</button>
-  </div>
-</div>
+    <div class="chat-window" id="chatWindow" style="display: none;">
+      <div class="chat-header">Chat</div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
 
 <script>
   const chatWindow = document.getElementById("chatWindow");

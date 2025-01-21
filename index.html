@@ -20,7 +20,7 @@
       <span class="text-2xl font-bold font-stack">reddit</span>
     </div>
     <div class="relative w-96">
-      <input type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <input id="search-bar" type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
       <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
     </div>
     <div class="flex items-center space-x-4">
@@ -47,16 +47,6 @@
                <span>Popular</span></a>
           </li>
           <li>
-            <a href="#" class="hover:text-orange-500">
-              <i class='bx bx-group'></i>
-              <span>Explore</span></a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-orange-500">
-              <i class='bx bx-cricket-ball'></i>
-              <span>All</span></a>
-          </li>
-          <li>
             <hr style="width: 90%;">
           </li>
 
@@ -65,18 +55,6 @@
           </li>
         </ul>
 
-
-        <div class="mt-6">
-          <h3 class="text-sm font-semibold mb-2">Recent</h3>
-          <ul class="space-y-2">
-            <li>
-              <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
-            </li>
-            <li>
-              <hr style="width: 90%;">
-            </li>
-          </ul>
-        </div>
 
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Topics</h3>
@@ -336,6 +314,26 @@
     </div>
   </div>
 </body>
+<script>
+  // search bar
+document.addEventListener("DOMContentLoaded", function() {
+const searchBar = document.getElementById('search-bar');
+const feedCards = document.querySelectorAll('.feed-card');
+
+searchBar.addEventListener('input', function() {
+const query = searchBar.value.toLowerCase();
+
+feedCards.forEach(card => {
+const content = card.textContent.toLowerCase();
+if (content.includes(query)) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+});
+</script>
 <script>
   //  chat js
   const chatWindow = document.getElementById('chatWindow');

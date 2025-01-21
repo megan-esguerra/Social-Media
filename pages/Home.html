@@ -27,7 +27,8 @@
       <!-- chat -->
       <img src="../img/chat-bubble.png" alt="Chat" class="w-6 h-6 cursor-pointer" onclick="toggleChat()">
       <!-- Create Feed -->
-      <i class='bx bx-plus'>Create</i>
+       <a href="./create-feed.html"><i class='bx bx-plus'>Create</i></a>
+      
       <!-- Notification Icon -->
       <div class="dropdown">
         <img src="../img/notification.png" alt="Notification" class="w-5 h-5 cursor-pointer" onclick="toggleNotificationDropdown()">
@@ -55,7 +56,7 @@
   <!-- Main Content -->
   <div class="">
     <!-- Sidebar -->
-    <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
+    <aside class="w-64 fixed h-screen reddit-aside sidebar-border overflow-y-auto custom-scrollbar">
       <nav>
         <ul class="space-y-4 ">
           <li class=" active-page">
@@ -82,7 +83,12 @@
           <li>
             <hr style="width: 90%;">
           </li>
+
+          <li>
+            <a href="/pages/Explore.html" class="hover:text-orange-500">Explore</a>
+          </li>
         </ul>
+
 
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Recent</h3>
@@ -105,6 +111,20 @@
               <hr style="width: 90%;">
             </li>
             <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+            <li>
+              <li>
+                <hr style="width: 90%;">
+              </li>
+          </ul>
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="https://redditinc.com/" class="hover:text-orange-500">About Reddit</a></li>
+            <li><a href="https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta" class="hover:text-orange-500">Advertise</a></li>
+            <li><a href="https://support.reddithelp.com/hc/en-us?utm_campaign=evergreen&utm_medium=footer&utm_source=reddit" class="hover:text-orange-500">Help</a></li>
+            <li><a href="https://redditinc.com/blog" class="hover:text-orange-500">Blog</a></li>
+            <li><a href="https://redditinc.com/careers" class="hover:text-orange-500">Careers</a></li>
+            <li><a href="https://redditinc.com/press" class="hover:text-orange-500">Press</a></li>
           </ul>
         </div>
       </nav>
@@ -285,47 +305,47 @@
         </div>
 
         <!-- Chat Window -->
-        <div class="chat-window" id="chatWindow">
-          <div class="chat-header">Open Chat</div>
-          <div class="chat-messages" id="chatMessages"></div>
-          <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="Type a message..." />
-            <button onclick="sendMessage()">Send</button>
-          </div>
-        </div>
-      </div>
-    </main>
+<div class="chat-window" id="chatWindow" style="display: none;">
+  <div class="chat-header">Chat</div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
   </div>
-</body>
+</div>
+
 <script>
-  //  chat js
-  const chatWindow = document.getElementById('chatWindow');
-    const chatMessages = document.getElementById('chatMessages');
-    const messageInput = document.getElementById('messageInput');
+  const chatWindow = document.getElementById("chatWindow");
+  const chatMessages = document.getElementById("chatMessages");
+  const messageInput = document.getElementById("messageInput");
 
-    //chat window
-    function toggleChat() {
-      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
-        chatWindow.style.display = 'flex';
-      } else {
-        chatWindow.style.display = 'none';
-      }
+  function toggleChat() {
+    chatWindow.style.display = chatWindow.style.display === "flex" ? "none" : "flex";
+  }
+
+  function sendMessage() {
+    const messageText = messageInput.value.trim();
+    if (messageText) {
+      const messageElement = document.createElement("div");
+      messageElement.className = "chat-message chat-sent";
+      messageElement.textContent = messageText;
+
+
+      chatMessages.appendChild(messageElement);
+
+      messageInput.value = "";
+      chatMessages.scrollTop = chatMessages.scrollHeight;
     }
+  }
 
-    // Send a message
-    function sendMessage() {
-      const messageText = messageInput.value.trim();
-      if (messageText) {
-        const messageElement = document.createElement('div');
-        messageElement.textContent = messageText;
-        chatMessages.appendChild(messageElement);
-        messageInput.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight; 
-      }
+  messageInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      sendMessage();
     }
+  });
 
-    //dropdown 
-    function toggleDropdown() {
+  //dropdown 
+  function toggleDropdown() {
       const dropdownContent = document.getElementById('dropdownContent');
       if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
         dropdownContent.style.display = 'block';
@@ -333,6 +353,5 @@
         dropdownContent.style.display = 'none';
       }
     }
-
 </script>
 </html>

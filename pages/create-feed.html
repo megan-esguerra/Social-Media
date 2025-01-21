@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Clone</title>
+  <link rel="icon" type="image/png" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ 
+  <link rel="stylesheet" href="../style.css">
+  <script src="../javascript.js"></script>
+</head>
+<body class="bg-reddit text-white">
+  <!-- Header -->
+  <header class="bg-reddit border-reddit-nav z-10 fixed w-full px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
+      <span class="text-2xl font-bold font-stack">reddit</span>
+    </div>
+    <div class="relative w-96">
+      <input type="text" placeholder=" Search Reddit" class="bg-zinc-800 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
+    </div>
+    <div class="flex items-center space-x-6">
+      <!-- chat -->
+      <img src="../img/chat-bubble.png" alt="Chat" class="w-6 h-6 cursor-pointer" onclick="toggleChat()">
+      <!-- Create Feed -->
+       <a href="./create-feed.html"><i class='bx bx-plus'>Create</i></a>
+      
+      <!-- Notification Icon -->
+      <div class="dropdown">
+        <img src="../img/notification.png" alt="Notification" class="w-5 h-5 cursor-pointer" onclick="toggleNotificationDropdown()">
+        <div class="dropdown-content notification-dropdown-content" id="notificationDropdownContent">
+          <div class="notification-dropdown">
+            <div class="notification-header">Notifications</div>
+            <div class="notification-divider"></div>
+            <img src="../img/snoovatar-full-hi.png" alt="Profile Icon">
+            <div class="notification-text">Turn on email digest</div>
+            <div class="notification-subtext">Stay in the loop on content from communities you love right in your email inbox</div>
+          </div>
+        </div>
+      </div>
+      <!-- Profile Dropdown -->
+      <div class="dropdown">
+        <img src="../img/avatar.png" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
+        <div class="dropdown-content profile-dropdown-content" id="dropdownContent">
+          <a href="../pages/viewprofile.html"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
+          <div class="profile-dropdown-username">u/Complete_Window1782</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="">
+    <!-- Sidebar -->
+    <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
+      <nav>
+        <ul class="space-y-4 ">
+          <li class="">
+            <a href="./Home.html" class="flex items-center space-x-2">
+                <i class='bx bx-home-alt-2' style='color:#ffffff; font-size: 20px;' ></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff; font-size: 20px;' ></i>
+               <span>Popular</span></a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-group' style="font-size: 20px;"></i>
+              <span>Explore</span></a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-cricket-ball' style="font-size: 20px;"></i>
+              <span>All</span></a>
+          </li>
+          <li>
+            <hr style="width: 90%;">
+          </li>
+        </ul>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Recent</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
+            </li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
+            <li><a href="#" class="hover:text-orange-500">Games</a></li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Feed -->
+    <main >
+      <div class="p-2 feed-nav">
+        <div class=" rounded-lg p-6 w-[600px] space-y-4">
+          <!-- Header -->
+          <div class="flex justify-between items-center">
+            <h2 class="text-xl font-semibold">Create post</h2>
+            <span class="text-gray-400">Drafts</span>
+          </div>
+      
+          <!-- Community Dropdown -->
+          <div>
+            <button class="w-25 bg-zinc-700 text-white px-4 py-2 rounded-3xl flex items-center justify-between">
+              <span>Select a community</span>
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
+      
+          <!-- Tabs -->
+          <div class="flex space-x-4  pb-2">
+            <button class="text-blue-400 border-b-2 border-blue-400 pb-1">Text</button>
+            <button class="text-gray-400 hover:text-white">Images & Video</button>
+            <button class="text-gray-400 hover:text-white">Link</button>
+            <button class="text-gray-400 hover:text-white">Poll</button>
+          </div>
+      
+          <!-- Title Input -->
+          <div>
+            <input type="text" placeholder="Title*" maxlength="300"
+              class="w-full bg-transparent border border-zinc-700 text-white placeholder-gray-400 px-4 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <div class="text-right text-gray-400 text-sm">0/300</div>
+          </div>
+      
+          <!-- Tags -->
+          <div>
+            <button class="bg-zinc-900 px-2 py-2 rounded-3xl text-gray-400 w-15 text-left">Add tags</button>
+          </div>
+      
+          <!-- Body Input -->
+          <div>
+             <!-- Toolbar -->
+          <div class="flex items-center space-x-4 text-gray-400">
+            <button class="hover:text-white"><b>B</b></button>
+            <button class="hover:text-white"><i>I</i></button>
+            <button class="hover:text-white"><u>U</u></button>
+            <button class="hover:text-white"><s>S</s></button>
+            <button class="hover:text-white">A</button>
+            <button class="hover:text-white">•</button>
+            <button class="hover:text-white">...</button>
+          </div>
+            <textarea placeholder="Body"
+              class="w-full bg-gray-700 text-white placeholder-gray-400 px-4 py-2 rounded-lg h-24 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+          </div>
+      
+         
+      
+          <!-- Footer Buttons -->
+          <div class="flex justify-end space-x-4">
+            <button class="bg-gray-700 px-4 py-2 rounded-lg text-gray-400">Save Draft</button>
+            <button class="bg-blue-500 px-4 py-2 rounded-lg text-white">Post</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+<script>
+  //  chat js
+  const chatWindow = document.getElementById('chatWindow');
+    const chatMessages = document.getElementById('chatMessages');
+    const messageInput = document.getElementById('messageInput');
+
+    //chat window
+    function toggleChat() {
+      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'flex';
+      } else {
+        chatWindow.style.display = 'none';
+      }
+    }
+
+    // Send a message
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = messageText;
+        chatMessages.appendChild(messageElement);
+        messageInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
+      }
+    }
+
+    //dropdown 
+    function toggleDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+        dropdownContent.style.display = 'block';
+      } else {
+        dropdownContent.style.display = 'none';
+      }
+    }
+
+</script>
+</html>

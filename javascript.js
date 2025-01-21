@@ -18,6 +18,18 @@ nextBtn.addEventListener('click', () => {
   });
 });
 
+// loading frame
+document.addEventListener("DOMContentLoaded", function() {
+  const iframe = document.getElementById('youtube-iframe');
+  const loadingPlaceholder = document.getElementById('loading-placeholder');
+
+  iframe.onload = function() {
+    setTimeout(() => {
+      loadingPlaceholder.style.display = 'none';
+      iframe.classList.remove('hidden');
+    }, 100); // 100ms delay
+  };
+});
 
    
     // Notification Dropdown

@@ -286,6 +286,33 @@
         font-size: 25px;
         color: white;
       }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 0; /* Hide scrollbar */
+      }
+      
+      .custom-scrollbar:hover::-webkit-scrollbar {
+        width: 12px; /* Show scrollbar on hover */
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d2d2d; /* Color of the track */
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #312a28; /* Color of the thumb */
+        border-radius: 6px; /* Roundness of the thumb */
+        border: 3px solid #2d2d2d; /* Padding around the thumb */
+      }
+      
+      /* For Firefox */
+      .custom-scrollbar {
+        scrollbar-width: none; /* Hide scrollbar */
+      }
+      
+      .custom-scrollbar:hover {
+        scrollbar-width: thin; /* Show scrollbar on hover */
+        scrollbar-color: #312a28 #2d2d2d; /* Thumb and track color */
+      }
 /* End Luis code */
 
 /* Kristel code start Home css */

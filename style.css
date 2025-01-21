@@ -81,6 +81,8 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 10px; 
+  overflow: hidden;
 }
 .dropdown-content a {
   color: lightgray;
@@ -725,5 +727,8 @@ aside#profileView {
   padding: 8px;
   border-radius: 15px;
   color: white;
+}
+.dropdown-content.notification-dropdown-content {
+  top: 35px; /* Adjust the value to move the dropdown lower */
 }
 /* Kristel code enddsssss*/

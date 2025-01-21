@@ -229,10 +229,10 @@
 
 /* Luis css code */
       .bg-reddit{
-        background-color: #141415;
+        background-color: #0e1113;
       }
       .reddit-aside{
-        background-color: #141415;
+        background-color: #0e1113;
         padding-top: 80px;
         padding-left: 30px;
       }
@@ -243,7 +243,7 @@
         border-right: #5c5b5b solid 0.9px;
       }
       main{
-        position: relative;
+        
         right: 0;
         width: 70%;
         padding-top: 4rem;
@@ -258,7 +258,7 @@
         border-top: #323131 solid 0.1px;
         
         :hover{
-          background-color: #1c1c1d;
+          background-color: #181c1f;
         }
       }
       .profile-feed{
@@ -279,8 +279,220 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, 
                      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
       }
+      .bx .bx-plus{
+        font-size: larger;
+      }
+      .create-post{
+        font-size: 25px;
+        color: white;
+      }
 /* End Luis code */
-      /* Kristel code css */
+
+/* Kristel code start Home css */
+      .notification-dropdown-content {
+        min-width: 340px; 
+      }
+      .profile-dropdown-content {
+        min-width: 230px;
+        top: 40px; 
+      }
+      .dropdown-content a {
+        color: lightgray;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      .dropdown-content a img {
+        margin-right: 8px;
+        width: 34px;
+        height: 32px;
+        border-radius: 50%;
+      }
+      .dropdown-content a:hover {
+        color: white;
+      }
+      .notification-text {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        margin-top: 24px;
+      }
+      .notification-subtext {
+        font-size: 14px;
+        text-align: center;
+        color: #6c7e88;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      .notification-dropdown {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 16px;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+      }
+      .notification-dropdown img {
+        width: 108px;
+        height: 153px;
+        border-radius: 50%;
+        margin-bottom: 8px;
+        margin-left: 96px;
+        margin-top: 19px;
+      }
+      .notification-header {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #adc0c9;
+        margin-bottom: 8px;
+      }
+      .notification-divider {
+        height: 3px;
+        background-color: #648efc;
+        margin-bottom: 16px;
+        border-radius: 50px;
+      }
+      .profile-info {
+        margin-left: -275px;
+        position: relative;
+        margin-top: 20px; 
+      }
+      .profile-buttons {
+        font-weight: 500;
+        color: #eef1f3;
+        margin-right: 27px;
+        margin-top: 20px; 
+      }
+      .profile-buttons button {
+        background-color: none;
+        border-radius: 20px;
+        padding: 9px 13px;
+        margin: 5px;
+        color: #dbe4e9;
+        cursor: pointer;
+        border: none;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding-left: 14px;
+        font-size: 14px;
+      }
+      .profile-buttons button.active {
+        background-color: #3d494e;
+      }
+      .profile-buttons button:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .profile-name {
+        font-size: 24px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: bold;
+        color: #b7cad4;
+      }
+      .profile-username {
+        color: #748791;
+        font-size: 12px;
+      }
+      .add-image {
+        width: 29px;
+        height: 29px;
+        border-radius: 50%;
+        background-color: #2a3236;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: -5px;
+        left: 27%;
+        transform: translateX(-50%);
+      }
+      .add-image img {
+        width: 15px;
+        height: 15px;
+      }
+      .profile-dropdown-username {
+        color: #748791;
+        font-size: 12px;
+        margin-left: 60px;
+        margin-top: -18px;
+        padding-bottom: 1rem;
+      }
+       /* Kristel code end Home css */
+
+      /* Kristel code start viewprofile css */
+      .chat-button {
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        outline: none;
+      }
+      .chat-window {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        height: 400px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+      }
+      .chat-header {
+        background: #0079d3;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
+        border-radius: 10px 10px 0 0;
+      }
+      .chat-messages {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        font-size: 14px;
+      }
+      .chat-input {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+      }
+      .chat-input input {
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .chat-input button {
+        margin-left: 10px;
+        padding: 10px;
+        background: #0079d3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        background-color: #181c1f;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        z-index: 1;
+        min-width: 160px;
+      }
       .notification-dropdown-content {
         min-width: 340px; 
       }
@@ -410,5 +622,189 @@
         margin-top: -18px;
         padding-bottom: 1rem;
       }
-       
-      /* Kristel code css */
+      .profile-card {
+        background: linear-gradient(to bottom, #003c94, #000000 14%);
+        width: 313px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        overflow: hidden;
+        margin-left: 240px;
+        margin-top: 40px;
+      }
+      .profile-card .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .profile-card .header .share-icon {
+        background-color: #333;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .profile-card .header .share-icon:hover {
+        background-color: #444;
+      }
+      .profile-card h2 {
+        font-size: 16px;
+        margin: 0;
+        margin-top: 77px;
+        color: #eef1f3;
+        font-weight: bold;
+      }
+      .profile-card .stats {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+      .profile-card .stats div {
+        margin-bottom: 4px;
+      }
+      .profile-card .achievements {
+        margin-top: 20px;
+      }
+      .profile-card .achievements img {
+        width: 38px;
+        height: 38px;
+        margin-right: -11px;
+      }
+      .profile-card .settings {
+        margin-top: 20px;
+      }
+      .profile-card .settings button {
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .profile-card .settings button:hover {
+        background-color: #004d99;
+      }
+      .profile-card .links {
+        margin-top: 20px;
+      }
+      .profile-card .links button {
+        background-color: transparent;
+        color: #0066cc;
+        border: 1px solid #0066cc;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        width: 100%;
+      }
+      .profile-card .links button:hover {
+        background-color: #0066cc;
+        color: white;
+      }
+      .share-button {
+        background-color: #2a3236;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        padding: 7px 17px;
+        font-size: 12px;
+        cursor: pointer;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        width: 80px;
+        margin-top: 12px;
+        transition: background-color 0.2s; 
+      }
+      .share-button:hover {
+        background-color: #3a3f44; 
+      }
+      .profile-card .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      }
+      .profile-card .stats .value {
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+      }
+      .profile-card .stats .label {
+        font-size: 12px;
+        color: #8ba2ad;
+      }
+      .achievements {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .achievements h3 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        color: #8ba2ad;
+        font-size: 12px;
+      }
+      .badge-container {
+        display: flex;
+        align-items: center;
+        gap: 1px; 
+      }
+      .badge-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        color: #8ba2ad;
+        font-size: 12px;
+        margin-left: 23px;
+        cursor: pointer;
+      }
+      .badge-text span:hover {
+        text-decoration: underline;
+      }
+      .view-all-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .unlocked-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        color: #8ba2ad;
+        font-size: 12px;
+      }
+      .view-all-button {
+        background-color: #2a3236;
+        color: white;
+        border: none;
+        border-radius: 16px;
+        padding: 7px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        transition: background-color 0.2s, border 0.2s;
+      }
+      .view-all-button:hover {
+        background-color: #3a3f44; 
+        text-decoration: underline;
+      }
+      .divider {
+        border-top: 1px solid #3d4b50; ;
+        margin-top: 10px;
+      }
+      .badge-container img {
+        background-color: black;
+        border-radius: 50%;
+        padding: 1px; 
+        transition: transform 0.2s; 
+      }
+      .badge-container img:hover {
+        transform: translateY(-5px); 
+      }
+      aside#profileView {
+        margin-left: 437px;
+    }
+    /* Kristel code end viewprofile css */

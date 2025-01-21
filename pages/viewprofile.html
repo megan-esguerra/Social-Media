@@ -4,224 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reddit Clone</title>
+  <link rel="icon" type="image/png" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <style>
-    .chat-button {
-      font-size: 24px;
-      cursor: pointer;
-      border: none;
-      background: none;
-      outline: none;
-    }
-    .chat-window {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      height: 400px;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      flex-direction: column;
-    }
-    .chat-header {
-      background: #0079d3;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      font-size: 18px;
-      border-radius: 10px 10px 0 0;
-    }
-    .chat-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      font-size: 14px;
-    }
-    .chat-input {
-      display: flex;
-      padding: 10px;
-      border-top: 1px solid #ccc;
-    }
-    .chat-input input {
-      flex: 1;
-      padding: 10px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .chat-input button {
-      margin-left: 10px;
-      padding: 10px;
-      background: #0079d3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 30px;
-      right: 0;
-      background-color: #181c1f;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      border-radius: 10px;
-      z-index: 1;
-      min-width: 160px;
-    }
-    .notification-dropdown-content {
-      min-width: 340px; 
-    }
-    .profile-dropdown-content {
-      min-width: 230px;
-      top: 40px; 
-    }
-    .dropdown-content a {
-      color: lightgray;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    .dropdown-content a img {
-      margin-right: 8px;
-      width: 34px;
-      height: 32px;
-      border-radius: 50%;
-    }
-    .dropdown-content a:hover {
-      color: white;
-    }
-    .notification-text {
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      margin-top: 24px;
-    }
-    .notification-subtext {
-      font-size: 14px;
-      text-align: center;
-      color: #6c7e88;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    .notification-dropdown {
-      display: flex;
-      flex-direction: column;
-      padding: 12px 16px;
-      padding-top: 2rem;
-      padding-bottom: 4rem;
-    }
-    .notification-dropdown img {
-      width: 108px;
-      height: 153px;
-      border-radius: 50%;
-      margin-bottom: 8px;
-      margin-left: 96px;
-      margin-top: 19px;
-    }
-    .notification-header {
-      text-align: center;
-      font-size: 14px;
-      font-weight: bold;
-      color: #adc0c9;
-      margin-bottom: 8px;
-    }
-    .notification-divider {
-      height: 3px;
-      background-color: #648efc;
-      margin-bottom: 16px;
-      border-radius: 50px;
-    }
-    .profile-info {
-      margin-left: -275px;
-      position: relative;
-    }
-    .profile-buttons {
-      font-weight: 500;
-      color: #eef1f3;
-      margin-right: 27px;
-    }
-    .profile-buttons button {
-      background-color: none;
-      border-radius: 20px;
-      padding: 9px 13px;
-      margin: 5px;
-      color: #dbe4e9;
-      cursor: pointer;
-      border: none;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      padding-left: 14px;
-      font-size: 14px;
-    }
-    .profile-buttons button.active {
-      background-color: #3d494e;
-    }
-    .profile-buttons button:hover {
-      color: white;
-      text-decoration: underline;
-    }
-    .profile-name {
-      font-size: 24px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-weight: bold;
-      color: #b7cad4;
-    }
-    .profile-username {
-      color: #748791;
-      font-size: 12px;
-    }
-    .add-image {
-      width: 29px;
-      height: 29px;
-      border-radius: 50%;
-      background-color: #2a3236;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      bottom: -5px;
-      left: 27%;
-      transform: translateX(-50%);
-    }
-    .add-image img {
-      width: 15px;
-      height: 15px;
-    }
-    .profile-dropdown-username {
-      color: #748791;
-      font-size: 12px;
-      margin-left: 60px;
-      margin-top: -18px;
-      padding-bottom: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../javascript.js"></script>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-reddit text-white">
   <!-- Header -->
-  <header class="bg-black z-10 fixed w-full px-4 py-2 flex items-center justify-between">
+  <header class="bg-reddit border-reddit-nav z-10 fixed w-full px-4 py-2 flex items-center justify-between">
     <div class="flex items-center space-x-2">
       <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
-      <span class="text-lg font-semibold">Reddit</span>
+      <span class="text-2xl font-bold font-stack">reddit</span>
     </div>
-    <div class="relative">
-      <input type="text" placeholder="Search Reddit" class="bg-gray-700 text-white rounded-full px-4 py-1 w-64 focus:outline-none">
+    <div class="relative w-96">
+      <input type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
     </div>
     <div class="flex items-center space-x-6">
       <!-- chat -->
       <img src="../img/chat-bubble.png" alt="Chat" class="w-6 h-6 cursor-pointer" onclick="toggleChat()">
+      <!-- Create Feed -->
+      <i class='bx bx-plus'>Create</i>
       <!-- Notification Icon -->
       <div class="dropdown">
         <img src="../img/notification.png" alt="Notification" class="w-5 h-5 cursor-pointer" onclick="toggleNotificationDropdown()">
@@ -247,19 +52,37 @@
   </header>
 
   <!-- Main Content -->
-  <div class="flex relative p-10">
+  <div class="flex relative ">
     <!-- Sidebar -->
-    <aside class="w-64 min-h-screen bg-gray-800 p-4">
+    <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
       <nav>
         <ul class="space-y-4">
-          <li>
-            <a href="../pages/Home.html" class="flex items-center space-x-2 hover:text-orange-500">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 12l18-12v24z"/></svg>
+          <li class="active-page">
+            <a href="../pages/Home.html" class="flex items-center space-x-2">
+              <i class='bx bxs-home-alt-2' style='color:#ffffff'></i>
               <span>Home</span>
             </a>
           </li>
           <li>
-            <a href="#" class="hover:text-orange-500">Popular</a>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff'></i>
+              <span>Popular</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-group'></i>
+              <span>Explore</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">
+              <i class='bx bx-cricket-ball'></i>
+              <span>All</span>
+            </a>
+          </li>
+          <li>
+            <hr style="width: 90%;">
           </li>
         </ul>
 
@@ -269,6 +92,9 @@
             <li>
               <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
             </li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
           </ul>
         </div>
 
@@ -277,7 +103,10 @@
           <ul class="space-y-2">
             <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
             <li><a href="#" class="hover:text-orange-500">Games</a></li>
-            <li><a href="#" class="hover:text-orange-500">QAs</a></li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
           </ul>
         </div>
       </nav>
@@ -308,6 +137,66 @@
           <button class="text-sm" onclick="activateButton(this)">Downvoted</button>
         </div>
       </aside>
+      <div class="profile-card">
+        <div class="header">
+          <h2>Complete_Window1781</h2>
+          <div class="share-icon">📤</div>
+        </div>
+
+        <!-- Share Button -->
+        <button class="share-button">
+          <i class='bx bx-share-alt'></i> Share
+        </button>
+
+        <div class="stats">
+          <div>
+            <div class="value">1</div>
+            <div class="label">Post karma</div>
+          </div>
+          <div>
+            <div class="value">0</div>
+            <div class="label">Comment karma</div>
+          </div>
+          <div>
+            <div class="value">Jan 18, 2025</div>
+            <div class="label">(Cake day)</div>
+          </div>
+          <div>
+            <div class="value">0</div>
+            <div class="label">Gold earned</div>
+          </div>
+        </div>
+
+        <div class="achievements">
+          <h3>Achievements</h3>
+          <div class="badge-container">
+            <img src="../img/badge1.png" alt="Achievement 1">
+            <img src="../img/badge1.png" alt="Achievement 2">
+            <img src="../img/badge3.png" alt="Achievement 3">
+            <div class="badge-text">
+              <span>Banana Baby</span>, 
+              <span>Banana Beginner</span>, 
+              <span>Joined Reddit</span>, 
+              <span>+1 more</span>
+            </div>
+          </div>
+          <div class="view-all-container">
+            <div class="unlocked-text">4 unlocked</div>
+            <button class="view-all-button">View All</button>
+          </div>
+          <div class="divider"></div>
+        </div>
+        <div class="settings">
+          <h3>Settings</h3>
+          <button>Edit Profile</button>
+          <button>Style Avatar</button>
+          <button>Mod Settings</button>
+        </div>
+
+        <div class="links">
+          <button>+ Add Social Link</button>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -322,21 +211,23 @@
   </div>
 
   <script>
-    const chatWindow = document.getElementById('chatWindow');
-    const chatMessages = document.getElementById('chatMessages');
-    const messageInput = document.getElementById('messageInput');
+    // Activate button
+    function activateButton(button) {
+      const buttons = document.querySelectorAll('.profile-buttons button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
 
-    //chat window
+    // Toggle chat window
     function toggleChat() {
-      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
-        chatWindow.style.display = 'flex';
-      } else {
-        chatWindow.style.display = 'none';
-      }
+      const chatWindow = document.getElementById('chatWindow');
+      chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
     }
 
     // Send a message
     function sendMessage() {
+      const messageInput = document.getElementById('messageInput');
+      const chatMessages = document.getElementById('chatMessages');
       const messageText = messageInput.value.trim();
       if (messageText) {
         const messageElement = document.createElement('div');
@@ -347,31 +238,10 @@
       }
     }
 
-    //dropdown 
+    // Toggle profile dropdown
     function toggleDropdown() {
       const dropdownContent = document.getElementById('dropdownContent');
-      if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
-        dropdownContent.style.display = 'block';
-      } else {
-        dropdownContent.style.display = 'none';
-      }
-    }
-
-    // Notification Dropdown
-    function toggleNotificationDropdown() {
-      const notificationDropdownContent = document.getElementById('notificationDropdownContent');
-      if (notificationDropdownContent.style.display === 'none' || notificationDropdownContent.style.display === '') {
-        notificationDropdownContent.style.display = 'block';
-      } else {
-        notificationDropdownContent.style.display = 'none';
-      }
-    }
-
-    // Activate button
-    function activateButton(button) {
-      const buttons = document.querySelectorAll('.profile-buttons button');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+      dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </body>

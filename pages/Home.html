@@ -19,12 +19,16 @@
       <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
       <span class="text-2xl font-bold font-stack">reddit</span>
     </div>
-    <div class="relative">
-      <input type="text" placeholder="Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-96 focus:outline-none">
+    <div class="relative w-96">
+      <input type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
     </div>
     <div class="flex items-center space-x-6">
       <!-- chat -->
       <img src="../img/chat-bubble.png" alt="Chat" class="w-6 h-6 cursor-pointer" onclick="toggleChat()">
+      <!-- Create Feed -->
+       <a href="./create-feed.html"><i class='bx bx-plus'>Create</i></a>
+      
       <!-- Notification Icon -->
       <div class="dropdown">
         <img src="../img/notification.png" alt="Notification" class="w-5 h-5 cursor-pointer" onclick="toggleNotificationDropdown()">

@@ -712,4 +712,11 @@ aside#profileView {
   color: #8ba2ad;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+.active-page a {
+  background-color: #394246;
+  width: 90%;
+  padding: 8px;
+  border-radius: 15px;
+  color: white;
+}
 /* Kristel code enddsssss*/

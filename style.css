@@ -228,6 +228,9 @@
       }
 
 /* Luis css code */
+.hidden {
+  display: none;
+}
       .bg-reddit{
         background-color: #0e1113;
       }
@@ -245,8 +248,15 @@
       .carousel-reddit{
         right: 0;
         width: 95%;
-        padding-top: 5rem;
+        padding-top: 70px;
         padding-left: 21rem;
+      }
+      .bg-cover {
+        background-size: cover;
+      }
+      
+      .bg-center {
+        background-position: center;
       }
       .scrollbar-hide {
         -ms-overflow-style: none;  /* Internet Explorer 10+ */

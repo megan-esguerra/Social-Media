@@ -156,6 +156,121 @@ hr{
 .bx .bx-plus{
   font-size: larger;
 }
+
+      .bg-reddit{
+        background-color: #0e1113;
+      }
+      .reddit-aside{
+        background-color: #0e1113;
+        padding-top: 80px;
+        padding-left: 30px;
+      }
+      .border-reddit-nav{
+        border-bottom: #5c5b5b solid 0.9px;
+      }
+      .sidebar-border{
+        border-right: #5c5b5b solid 0.9px;
+      }
+      .carousel-reddit{
+        right: 0;
+        width: 95%;
+        padding-top: 5rem;
+        padding-left: 21rem;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;  /* Safari and Chrome */
+      }
+      
+      
+      
+      
+      /* For Firefox */
+      .carousel {
+        scrollbar-width: none; /* Hide scrollbar */
+      }
+      
+    
+      .guest-main{
+        right: 0;
+        width: 70%;
+        padding-left: 21rem;
+      }
+      main{
+        right: 0;
+        width: 70%;
+        padding-top: 4rem;
+        padding-left: 21rem;
+      }
+      .feed-nav{
+        font-size: 12px;
+        font-weight: bold;
+        color: #4a5b68;
+      }
+      .feed-card{
+        border-top: #323131 solid 0.1px;
+        
+        :hover{
+          background-color: #181c1f;
+        }
+      }
+      .profile-feed{
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+      }
+      hr{
+        border-top: #323131 solid 0.1px;
+      }
+      .active-page{
+        background: #394246;
+        width: 90%;
+        padding: 8px;
+        border-radius: 15px;
+      }
+      .font-stack {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, 
+                     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      }
+      .bx .bx-plus{
+        font-size: larger;
+      }
+      .create-post{
+        font-size: 25px;
+        color: white;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 0; /* Hide scrollbar */
+      }
+      
+      .custom-scrollbar:hover::-webkit-scrollbar {
+        width: 12px; /* Show scrollbar on hover */
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d2d2d; /* Color of the track */
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #312a28; /* Color of the thumb */
+        border-radius: 6px; /* Roundness of the thumb */
+        border: 3px solid #2d2d2d; /* Padding around the thumb */
+      }
+      
+      /* For Firefox */
+      .custom-scrollbar {
+        scrollbar-width: none; /* Hide scrollbar */
+      }
+      
+      .custom-scrollbar:hover {
+        scrollbar-width: thin; /* Show scrollbar on hover */
+        scrollbar-color: #312a28 #2d2d2d; /* Thumb and track color */
+      }
+
 /* End Luis code */
 /* Kristel code start*/
 .notification-dropdown-content {
@@ -597,4 +712,4 @@ aside#profileView {
   color: #8ba2ad;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-/* Kristel code enddsss*/
+/* Kristel code enddssss*/

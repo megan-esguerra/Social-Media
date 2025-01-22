@@ -50,7 +50,7 @@
         <img src="../img/avatar.png" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
         <div class="dropdown-content profile-dropdown-content" id="dropdownContent">
           <a href="../pages/viewprofile.html"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
-          <div class="profile-dropdown-username">u/Complete_Window1782</div>
+          <div class="profile-dropdown-username"> <p id="username-display"></p></div>
         </div>
       </div>
     </div>
@@ -337,7 +337,29 @@ document.addEventListener("DOMContentLoaded", function() {
         <button onclick="sendMessage()">Send</button>
       </div>
     </div>
-
+    <script>
+      // Check if user is logged in
+      document.addEventListener('DOMContentLoaded', () => {
+        const username = localStorage.getItem('username');
+        const password = localStorage.getItem('password'); // Optional: You can display or validate password if needed.
+  
+        if (username) {
+          document.getElementById('username-display').textContent = `Username: ${username}`;
+        } else {
+          // Redirect to login page if not logged in
+          window.location.href = '../index.html';
+        }
+      });
+  
+      function logout() {
+        // Remove username and password from localStorage
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
+  
+        // Redirect to login page
+        window.location.href = '../index.html';
+      }
+    </script>
 <script>
   const chatWindow = document.getElementById("chatWindow");
   const chatMessages = document.getElementById("chatMessages");

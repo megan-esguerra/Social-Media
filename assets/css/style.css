@@ -188,6 +188,12 @@ main{
   padding-top: 4rem;
   padding-left: 21rem;
 }
+.explore{
+  right: 0;
+  width: 100%;
+  padding-top: 4rem;
+  padding-left: 21rem;
+}
 .feed-nav{
   font-size: 12px;
   font-weight: bold;

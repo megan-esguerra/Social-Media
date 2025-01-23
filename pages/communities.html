@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Announcements</title>
+  <link rel="icon" type="image/png" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ 
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../javascript.js"></script>
+</head>
+<body class="bg-reddit text-white">
+  <!-- Header -->
+  <header class="bg-reddit border-reddit-nav z-10 fixed w-full px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <a href="../index.html" class="flex items-center">
+        <img src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png" alt="Reddit Logo" class="w-6 h-6">
+      <span class="text-2xl font-bold font-stack">reddit</span>
+      </a>
+      
+    </div>
+    <div class="relative w-96">
+      <input id="search-bar" type="text" placeholder=" Search Reddit" class="bg-zinc-700 h-10 text-white rounded-full px-4 py-1 w-full focus:outline-none pl-10">
+      <i class='bx bx-search absolute left-3 top-2.5 text-white'></i>
+    </div>
+    <div class="flex items-center space-x-6">
+      <!-- chat -->
+      <img src="../img/chat-bubble.png" alt="Chat" class="w-6 h-6 cursor-pointer" onclick="toggleChat()">
+      <!-- Create Feed -->
+       <a href="./create-feed.html"><i class='bx bx-plus'>Create</i></a>
+      
+      <!-- Notification Icon -->
+      <div class="dropdown">
+        <img src="../img/notification.png" alt="Notification" class="w-5 h-5 cursor-pointer" onclick="toggleNotificationDropdown()">
+        <div class="dropdown-content notification-dropdown-content" id="notificationDropdownContent">
+          <div class="notification-dropdown">
+            <div class="notification-header">Notifications</div>
+            <div class="notification-divider"></div>
+            <img src="../img/snoovatar-full-hi.png" alt="Profile Icon">
+            <div class="notification-text">Turn on email digest</div>
+            <div class="notification-subtext">Stay in the loop on content from communities you love right in your email inbox</div>
+          </div>
+        </div>
+      </div>
+      <!-- Profile Dropdown -->
+      <div class="dropdown">
+        <img src="../img/avatar.png" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
+        <div class="dropdown-content profile-dropdown-content" id="dropdownContent">
+          <a href="../pages/viewprofile.html"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
+          <div class="profile-dropdown-username"> <p id="username-display"></p></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+<div class="">
+    <!-- Sidebar -->
+    <aside class="w-64 fixed h-screen reddit-aside sidebar-border overflow-y-auto custom-scrollbar">
+      <nav>
+        <ul class="space-y-4 ">
+          <li class=" active-page">
+            <a href="Home.html" class="flex items-center">
+              <i class='bx bxs-home-alt-2' style='color:#ffffff' ></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="hoversidebar">
+            <a href="popular.html" >
+              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
+               <span>Popular</span></a>
+          </li>
+          <li class="hoversidebar">
+            <a href="Explore.html" >
+              <i class='bx bx-group'></i>
+              <span>Explore</span></a>
+          </li>
+          <li class="hoversidebar">
+            <a href="#" class="hoversidebar">
+              <i class='bx bx-cricket-ball'></i>
+              <span>All</span></a>
+          </li>
+          <li>
+            <hr style="width: 90%;">
+          </li>
+        </ul>
+
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
+          <ul class="space-y-2">
+            <li class="hoversidebar">
+              <a href="#" class="hoversidebar">r/SkyChildrenOfLight</a>
+            </li>
+            
+            <li>
+              <hr style="width: 90%;">
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
+          <ul class="space-y-2">
+            <li class="hoversidebar"><a href="#" >Internet Culture</a></li>
+            <li class="hoversidebar"><a href="#" >Games</a></li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+            <li class="hoversidebar"><a href="#" >Q&As</a></li>
+            <li>
+              <li>
+                <hr style="width: 90%;">
+              </li>
+          </ul>
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Resources</h3>
+          <ul class="space-y-2">
+            <li class="hoversidebar"><a href="https://redditinc.com/" class="hover:text-orange-500">About Reddit</a></li>
+            <li class="hoversidebar"><a href="https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta" class="hover:text-orange-500">Advertise</a></li>
+            <li class="hoversidebar"><a href="https://support.reddithelp.com/hc/en-us?utm_campaign=evergreen&utm_medium=footer&utm_source=reddit" class="hover:text-orange-500">Help</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/blog" class="hover:text-orange-500">Blog</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/careers" class="hover:text-orange-500">Careers</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/press" class="hover:text-orange-500">Press</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Communities  -->
+      <!-- Banner Section -->
+      <div class="relative">
+        <!-- Banner Image -->
+        <div class="h-32 bg-cover bg-center rounded-xl" style="background-color: #1A282D; margin-left: 21rem; margin-right: 5rem; border-radius: 1rem;">
+        </div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative">
+        <div class="flex items-center" style="margin-left: 19rem; margin-top: -2rem;">
+            <!-- Profile Picture -->
+            <div class="w-20 h-20 bg-gray-300 rounded-full border-4 border-[#101214] overflow-hidden">
+              <img src="https://styles.redditmedia.com/t5_2r0ij/styles/communityIcon_yor9myhxz5x11.png" alt="r/announcements icon" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <!-- Community Name -->
+            <div class="ml-4 flex items-center font-bold text-18 xs:text-32 mb-0 " style="color: #f2f3f5; margin-bottom: -3rem;">
+              <h1 class="text-white text-3xl">r/announcements</h1>
+            </div>
+          </div>
+
+          <!-- Sections -->
+        <div class="flex items-center space-x-4" style="margin-left: 55rem; margin-top: -2rem;" >
+            <button class="bg-[#902308] text-white px-4 py-2 rounded-md hover:bg-[#db3a12]" style="border-radius: 2rem;"> 
+                Create Post
+            </button>              
+
+            <button class="border-2 border-white-700 text-white-700 px-4 py-2 rounded-full hover:bg-gray-700 hover:text-white">
+                <svg rpl="" fill="currentColor" height="20" icon-name="notification-fill" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 18h1a2 2 0 0 1-4 0h3Zm6.263-7.07a2.699 2.699 0 0 1-1.189-2.23l-.005-1.61a6.069 6.069 0 1 0-12.138 0v1.613a2.7 2.7 0 0 1-1.193 2.227A3.949 3.949 0 0 0 1 14.208v.672A1.119 1.119 0 0 0 2.117 16h15.766A1.119 1.119 0 0 0 19 14.88v-.672a3.952 3.952 0 0 0-1.737-3.278Z"></path>
+                </svg>
+            </button>
+            
+            <button class="border-2 border-white-700 text-white-700 px-4 py-2 rounded-full hover:bg-gray-700 hover:text-white">
+                Joined
+            </button>
+            
+            <button class="border-2 border-white-600 text-white-600 p-2  hover:bg-gray-700 rounded-full">
+                <i class='bx bx-dots-horizontal-rounded text-xl'></i>
+            </button>
+        </div>
+    
+        <div class="flex justify-between items-center flex-wrap mb-sm mt-sm p-2 space-x-4" style="margin-left: 18rem; color: #89929b;">
+            <button class="font-bold flex items-center justify-center rounded-full hover:bg-gray-700 px-4 py-2">
+              Hot <i class='bx bxs-chevron-down'></i>
+            </button> 
+          
+            <button class="font-bold flex items-center justify-center rounded-full hover:bg-gray-700 px-4 py-2 ml-auto" style="margin-inline-end: auto;">
+              <svg rpl="" fill="currentColor" height="16" icon-name="view-card-outline" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.882 1H2.118A1.12 1.12 0 0 0 1 2.119v15.762A1.119 1.119 0 0 0 2.118 19h15.764A1.12 1.12 0 0 0 19 17.881V2.119A1.12 1.12 0 0 0 17.882 1Zm-.132 16.75H2.25v-7.138h15.5v7.138ZM2.25 9.362V2.25h15.5v7.112H2.25Z"></path>
+              </svg>
+              <i class='bx bxs-chevron-down'></i>
+            </button> 
+        </div>
+
+        <!-- Highlights -->
+       
+        <!-- Feed -->
+    
+        <!-- Settings for the community group -->
+        <div style="margin-left: 58rem; margin-top: 1rem;">
+            <div class="profile-card">
+              <div class="header">
+                <h2>Announcements</h2>
+              </div>
+            
+              <div class="settings">
+                <h3>SETTINGS</h3>
+                <div class="settings-item">
+                  <img src="../img/avatar.png" alt="Profile Icon">
+                  <div>
+                    <span class="settings-text">Profile</span>
+                    <button>Edit Profile</button>
+                    <p>Customize your profile</p>
+                  </div>
+                </div>
+                <div class="settings-item">
+                  <img src="../img/Aavataricon.png" alt="Avatar Icon">
+                  <div>
+                    <span class="settings-text">Avatar</span>
+                    <button>Style Avatar</button>
+                    <p>Customize and style</p>
+                  </div>
+                </div>
+                <div class="settings-item">
+                  <img src="../img/mod.png" alt="Moderation Icon">
+                  <div>
+                    <span class="settings-text">Moderation</span>
+                    <button>Mod Settings</button>
+                    <p>Moderation tools</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+      </div>
+      
+
+
+  
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow" style="display: none;">
+      <div class="chat-header">Chat</div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+</div>
+    <script>
+      // Check if user is logged in
+      document.addEventListener('DOMContentLoaded', () => {
+        const username = localStorage.getItem('username');
+        const password = localStorage.getItem('password'); // Optional: You can display or validate password if needed.
+  
+        if (username) {
+          document.getElementById('username-display').textContent = `${username}`;
+        } else {
+          // Redirect to login page if not logged in
+          window.location.href = '../index.html';
+        }
+      });
+  
+      function logout() {
+        // Remove username and password from localStorage
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
+  
+        // Redirect to login page
+        window.location.href = '../index.html';
+      }
+    </script>
+<script>
+  const chatWindow = document.getElementById("chatWindow");
+  const chatMessages = document.getElementById("chatMessages");
+  const messageInput = document.getElementById("messageInput");
+
+  function toggleChat() {
+    chatWindow.style.display = chatWindow.style.display === "flex" ? "none" : "flex";
+  }
+
+  function sendMessage() {
+    const messageText = messageInput.value.trim();
+    if (messageText) {
+      const messageElement = document.createElement("div");
+      messageElement.className = "chat-message chat-sent";
+      messageElement.textContent = messageText;
+
+
+      chatMessages.appendChild(messageElement);
+
+      messageInput.value = "";
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  }
+
+  messageInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  //dropdown 
+  function toggleDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+        dropdownContent.style.display = 'block';
+      } else {
+        dropdownContent.style.display = 'none';
+      }
+    }
+</script>
+</html>

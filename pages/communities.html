@@ -567,7 +567,7 @@
 
   
     <!-- Chat Window -->
-    <div class="chat-window" id="chatWindow" style="display: none;">
+    <!-- <div class="chat-window" id="chatWindow" style="display: none;">
       <div class="chat-header">Chat</div>
       <div class="chat-messages" id="chatMessages"></div>
       <div class="chat-input">
@@ -575,7 +575,7 @@
         <button onclick="sendMessage()">Send</button>
       </div>
     </div>
-</div>
+</div> -->
     <script>
       // Check if user is logged in
       document.addEventListener('DOMContentLoaded', () => {
@@ -599,7 +599,7 @@
         window.location.href = '../index.html';
       }
     </script>
-<script>
+<!-- <script>
   const chatWindow = document.getElementById("chatWindow");
   const chatMessages = document.getElementById("chatMessages");
   const messageInput = document.getElementById("messageInput");
@@ -629,7 +629,6 @@
     }
   });
 
-  //dropdown 
   function toggleDropdown() {
       const dropdownContent = document.getElementById('dropdownContent');
       if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
@@ -638,5 +637,44 @@
         dropdownContent.style.display = 'none';
       }
     }
+</script> -->
+
+<!-- Chat Sidebar -->
+<div id="chat-container" class="chat-container hidden">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Chats</h2>
+      <div class="sidebar-icons">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">⚙️</button>
+      </div>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item">Threads</li>
+      <li class="menu-item">Discover Chat Channels</li>
+    </ul>
+  </div>
+
+  <!-- Main Chat Panel -->
+  <div class="main-panel">
+    <div class="chat-header">
+      <div class="header-title">
+        <h2>Welcome to chat!</h2>
+      </div>
+    </div>
+    <div class="chat-body">
+      <img class="welcome-image" src="../img/avatar.png" alt="Chat Placeholder">
+      <p>Start a direct or group chat with other users.</p>
+      <button class="start-chat-btn">+ Start New Chat</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const chatContainer = document.getElementById("chat-container");
+    chatContainer.classList.toggle("hidden");
+  }
 </script>
 </html>

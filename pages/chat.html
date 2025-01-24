@@ -105,115 +105,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Open Chat</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #f4f4f9;
-    }
-    .chat-button {
-      font-size: 24px;
-      cursor: pointer;
-      border: none;
-      background: none;
-      outline: none;
-    }
-    .chat-window {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      height: 400px;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      flex-direction: column;
-    }
-    .chat-header {
-      background: #0079d3;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      font-size: 18px;
-      border-radius: 10px 10px 0 0;
-    }
-    .chat-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      font-size: 14px;
-    }
-    .chat-input {
-      display: flex;
-      padding: 10px;
-      border-top: 1px solid #ccc;
-    }
-    .chat-input input {
-      flex: 1;
-      padding: 10px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .chat-input button {
-      margin-left: 10px;
-      padding: 10px;
-      background: #0079d3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Chat Interface</title>
 </head>
 <body>
-  <!-- Message Emoji -->
-  <button class="chat-button" onclick="toggleChat()">💬</button>
 
-  <!-- Chat Window -->
-  <div class="chat-window" id="chatWindow">
-    <div class="chat-header">Open Chat</div>
-    <div class="chat-messages" id="chatMessages"></div>
-    <div class="chat-input">
-      <input type="text" id="messageInput" placeholder="Type a message..." />
-      <button onclick="sendMessage()">Send</button>
+  <!-- Chat Sidebar -->
+  <div id="chat-container" class="chat-container hidden">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Chats</h2>
+        <div class="sidebar-icons">
+          <button class="icon-btn">🔍</button>
+          <button class="icon-btn">⚙️</button>
+        </div>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="menu-item">Threads</li>
+        <li class="menu-item">Discover Chat Channels</li>
+      </ul>
+    </div>
+
+    <!-- Main Chat Panel -->
+    <div class="main-panel">
+      <div class="chat-header">
+        <div class="header-title">
+          <h2>Welcome to chat!</h2>
+        </div>
+      </div>
+      <div class="chat-body">
+        <img class="welcome-image" src="../img/avatar.png" alt="Chat Placeholder">
+        <p>Start a direct or group chat with other users.</p>
+        <button class="start-chat-btn">+ Start New Chat</button>
+      </div>
     </div>
   </div>
 
-  <script>
-    const chatWindow = document.getElementById('chatWindow');
-    const chatMessages = document.getElementById('chatMessages');
-    const messageInput = document.getElementById('messageInput');
-
-    // Toggle the chat window
-    function toggleChat() {
-      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
-        chatWindow.style.display = 'flex';
-      } else {
-        chatWindow.style.display = 'none';
-      }
-    }
-
-    // Send a message
-    function sendMessage() {
-      const messageText = messageInput.value.trim();
-      if (messageText) {
-        const messageElement = document.createElement('div');
-        messageElement.textContent = messageText;
-        chatMessages.appendChild(messageElement);
-        messageInput.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the latest message
-      }
-    }
-  </script>
+  <script src="../javascript.js"></script>
 </body>
 </html>
+

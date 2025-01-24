@@ -143,42 +143,41 @@
     <!-- Sidebar -->
     <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
       <nav>
-        <ul class="space-y-4">
-          <li>
-            <a href="../pages/Home.html" class="flex items-center space-x-2 hover:text-orange-500">
-              <i class='bx bxs-home-alt-2' style='color:#ffffff'></i>
+        <ul class="space-y-4 ">
+          <li class=" hoversidebar">
+            <a href="Home.html" class="flex items-center">
+              <i class='bx bxs-home-alt-2' style='color:#ffffff' ></i>
               <span>Home</span>
             </a>
           </li>
           <li class="active-page">
-            <a href="../pages/popular.html" class="flex items-center space-x-2">
-              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff'></i>
-              <span>Popular</span>
-            </a>
+            <a href="popular.html" >
+              <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
+               <span>Popular</span></a>
           </li>
-          <li>
-            <a href="#" class="flex items-center space-x-2 hover:text-orange-500">
+          <li class="hoversidebar">
+            <a href="Explore.html" >
               <i class='bx bx-group'></i>
-              <span>Explore</span>
-            </a>
+              <span>Explore</span></a>
           </li>
-          <li>
-            <a href="#" class="flex items-center space-x-2 hover:text-orange-500">
+          <li class="hoversidebar">
+            <a href="#" class="hoversidebar">
               <i class='bx bx-cricket-ball'></i>
-              <span>All</span>
-            </a>
+              <span>All</span></a>
           </li>
           <li>
             <hr style="width: 90%;">
           </li>
         </ul>
 
+
         <div class="mt-6">
-          <h3 class="text-sm font-semibold mb-2">Recent</h3>
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
           <ul class="space-y-2">
-            <li>
-              <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
+            <li class="hoversidebar">
+              <a href="#" class="hoversidebar">r/SkyChildrenOfLight</a>
             </li>
+            
             <li>
               <hr style="width: 90%;">
             </li>
@@ -188,12 +187,37 @@
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Topics</h3>
           <ul class="space-y-2">
-            <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
-            <li><a href="#" class="hover:text-orange-500">Games</a></li>
+            <li class="hoversidebar"><a href="#" >Internet Culture</a></li>
+            <li class="hoversidebar"><a href="#" >Games</a></li>
             <li>
               <hr style="width: 90%;">
             </li>
-            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+            <li class="hoversidebar"><a href="#" >Q&As</a></li>
+            <li>
+              <li>
+                <hr style="width: 90%;">
+              </li>
+          </ul>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Communities</h3>
+          <ul class="space-y-2">
+            <li class="hoversidebar"><a href="communities.html" >r/announcement</a></li>
+            <!-- <li class="hoversidebar"><a href="#" >Games</a></li> -->
+            <li>
+              <hr style="width: 90%;">
+            </li>
+          </ul>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Resources</h3>
+          <ul class="space-y-2">
+            <li class="hoversidebar"><a href="https://redditinc.com/" class="hover:text-orange-500">About Reddit</a></li>
+            <li class="hoversidebar"><a href="https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta" class="hover:text-orange-500">Advertise</a></li>
+            <li class="hoversidebar"><a href="https://support.reddithelp.com/hc/en-us?utm_campaign=evergreen&utm_medium=footer&utm_source=reddit" class="hover:text-orange-500">Help</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/blog" class="hover:text-orange-500">Blog</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/careers" class="hover:text-orange-500">Careers</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/press" class="hover:text-orange-500">Press</a></li>
           </ul>
         </div>
       </nav>
@@ -378,14 +402,14 @@
   </main>
   
   <!-- Chat Window -->
-  <div class="chat-window" id="chatWindow">
+  <!-- <div class="chat-window" id="chatWindow">
     <div class="chat-header">Open Chat</div>
     <div class="chat-messages" id="chatMessages"></div>
     <div class="chat-input">
       <input type="text" id="messageInput" placeholder="Type a message..." />
       <button onclick="sendMessage()">Send</button>
     </div>
-  </div>
+  </div> -->
 
   <script>
     const carouselContainer = document.querySelector('.carousel-container');
@@ -426,25 +450,25 @@
       button.classList.add('active');
     }
 
-    // Toggle chat window
-    function toggleChat() {
-      const chatWindow = document.getElementById('chatWindow');
-      chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
-    }
+    // // Toggle chat window
+    // function toggleChat() {
+    //   const chatWindow = document.getElementById('chatWindow');
+    //   chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    // }
 
-    // Send a message
-    function sendMessage() {
-      const messageInput = document.getElementById('messageInput');
-      const chatMessages = document.getElementById('chatMessages');
-      const messageText = messageInput.value.trim();
-      if (messageText) {
-        const messageElement = document.createElement('div');
-        messageElement.textContent = messageText;
-        chatMessages.appendChild(messageElement);
-        messageInput.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight; 
-      }
-    }
+    // // Send a message
+    // function sendMessage() {
+    //   const messageInput = document.getElementById('messageInput');
+    //   const chatMessages = document.getElementById('chatMessages');
+    //   const messageText = messageInput.value.trim();
+    //   if (messageText) {
+    //     const messageElement = document.createElement('div');
+    //     messageElement.textContent = messageText;
+    //     chatMessages.appendChild(messageElement);
+    //     messageInput.value = '';
+    //     chatMessages.scrollTop = chatMessages.scrollHeight; 
+    //   }
+    // }
 
     // Toggle profile dropdown
     function toggleDropdown() {
@@ -461,5 +485,44 @@
     // Initialize arrows
     updateArrows();
   </script>
+
+  <!-- Chat Sidebar -->
+<div id="chat-container" class="chat-container hidden">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Chats</h2>
+      <div class="sidebar-icons">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">⚙️</button>
+      </div>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item">Threads</li>
+      <li class="menu-item">Discover Chat Channels</li>
+    </ul>
+  </div>
+
+  <!-- Main Chat Panel -->
+  <div class="main-panel">
+    <div class="chat-header">
+      <div class="header-title">
+        <h2>Welcome to chat!</h2>
+      </div>
+    </div>
+    <div class="chat-body">
+      <img class="welcome-image" src="../img/avatar.png" alt="Chat Placeholder">
+      <p>Start a direct or group chat with other users.</p>
+      <button class="start-chat-btn">+ Start New Chat</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const chatContainer = document.getElementById("chat-container");
+    chatContainer.classList.toggle("hidden");
+  }
+</script>
 </body>
 </html>

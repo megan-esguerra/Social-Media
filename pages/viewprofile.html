@@ -45,7 +45,7 @@
         <img src="../img/avatar.png" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer" onclick="toggleDropdown()">
         <div class="dropdown-content profile-dropdown-content" id="dropdownContent">
           <a href="../pages/viewprofile.html"><img src="../img/avatar.png" alt="Profile Icon">View Profile</a>
-          <div class="profile-dropdown-username">u/Astro</div>
+          <div class="profile-dropdown-username">u/Complete_Window1782</div>
         </div>
       </div>
     </div>
@@ -54,32 +54,36 @@
   <!-- Main Content -->
   <div class="flex relative ">
     <!-- Sidebar -->
-    <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
+    <aside class="w-64 fixed h-screen reddit-aside sidebar-border overflow-y-auto custom-scrollbar">
       <nav>
         <ul class="space-y-4 ">
           <li class=" active-page">
-            <a href="Home.html" class="flex items-center">
+            <a href="Home.html" class="flex items-center space-x-2">
               <i class='bx bxs-home-alt-2' style='color:#ffffff' ></i>
               <span>Home</span>
             </a>
           </li>
-          <li class="hoversidebar">
-            <a href="popular.html" >
+          <li>
+            <a href="popular.html" class="hover:text-orange-500">
               <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
                <span>Popular</span></a>
           </li>
-          <li class="hoversidebar">
-            <a href="Explore.html" >
+          <li>
+            <a href="Explore.html" class="hover:text-orange-500">
               <i class='bx bx-group'></i>
               <span>Explore</span></a>
           </li>
-          <li class="hoversidebar">
-            <a href="#" class="hoversidebar">
+          <li>
+            <a href="#" class="hover:text-orange-500">
               <i class='bx bx-cricket-ball'></i>
               <span>All</span></a>
           </li>
           <li>
             <hr style="width: 90%;">
+          </li>
+
+          <li>
+            <a href="/pages/Explore.html" class="hover:text-orange-500">Explore</a>
           </li>
         </ul>
 
@@ -87,8 +91,8 @@
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Topics</h3>
           <ul class="space-y-2">
-            <li class="hoversidebar">
-              <a href="#" class="hoversidebar">r/SkyChildrenOfLight</a>
+            <li>
+              <a href="#" class="hover:text-orange-500">r/SkyChildrenOfLight</a>
             </li>
             
             <li>
@@ -100,26 +104,37 @@
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Topics</h3>
           <ul class="space-y-2">
-            <li class="hoversidebar"><a href="#" >Internet Culture</a></li>
-            <li class="hoversidebar"><a href="#" >Games</a></li>
+            <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
+            <li><a href="#" class="hover:text-orange-500">Games</a></li>
             <li>
               <hr style="width: 90%;">
             </li>
-            <li class="hoversidebar"><a href="#" >Q&As</a></li>
+            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
             <li>
               <li>
                 <hr style="width: 90%;">
               </li>
           </ul>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Communities</h3>
+          <ul class="space-y-2">
+            <li class="hoversidebar"><a href="communities.html" >r/announcement</a></li>
+            <!-- <li class="hoversidebar"><a href="#" >Games</a></li> -->
+            <li>
+              <hr style="width: 90%;">
+            </li>
+          </ul>
+        </div>
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Resources</h3>
           <ul class="space-y-2">
-            <li class="hoversidebar"><a href="https://redditinc.com/" class="hover:text-orange-500">About Reddit</a></li>
-            <li class="hoversidebar"><a href="https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta" class="hover:text-orange-500">Advertise</a></li>
-            <li class="hoversidebar"><a href="https://support.reddithelp.com/hc/en-us?utm_campaign=evergreen&utm_medium=footer&utm_source=reddit" class="hover:text-orange-500">Help</a></li>
-            <li class="hoversidebar"><a href="https://redditinc.com/blog" class="hover:text-orange-500">Blog</a></li>
-            <li class="hoversidebar"><a href="https://redditinc.com/careers" class="hover:text-orange-500">Careers</a></li>
-            <li class="hoversidebar"><a href="https://redditinc.com/press" class="hover:text-orange-500">Press</a></li>
+            <li><a href="https://redditinc.com/" class="hover:text-orange-500">About Reddit</a></li>
+            <li><a href="https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta" class="hover:text-orange-500">Advertise</a></li>
+            <li><a href="https://support.reddithelp.com/hc/en-us?utm_campaign=evergreen&utm_medium=footer&utm_source=reddit" class="hover:text-orange-500">Help</a></li>
+            <li><a href="https://redditinc.com/blog" class="hover:text-orange-500">Blog</a></li>
+            <li><a href="https://redditinc.com/careers" class="hover:text-orange-500">Careers</a></li>
+            <li><a href="https://redditinc.com/press" class="hover:text-orange-500">Press</a></li>
           </ul>
         </div>
       </nav>
@@ -132,8 +147,8 @@
           <div class="flex items-center justify-center space-x-4">
             <img src="../img/avatar.png" alt="Profile" class="w-16 h-16 rounded-full">
             <div>
-              <h2 class="profile-name">Luis_Gabrielle_Estacio</h2>
-              <p class="profile-username">u/Luis_Gabrielle_Estacio</p>
+              <h2 class="profile-name">Complete_Woidow1781</h2>
+              <p class="profile-username">u/Complete_Window1781</p>
             </div>
           </div>
           <div class="add-image">
@@ -153,14 +168,14 @@
         
 <div class="no-posts">
   <img src="../img/hmm-snoo.png" alt="No Posts">
-  <p class="no-posts-text">u/Luis_Gabrielle_Estacio hasn't posted yet</p>
+  <p class="no-posts-text">u/Complete_Window1781 hasn't posted yet</p>
 </div>
       </aside>
       <div class="profile-card-wrapper">
         <div class="profile-card">
           <div class="header">
-            <h2>u/Luis_Gabrielle_Estacio</h2>
-            <div class="share-icon"><i class='bx bx-camera bx-flip-horizontal' style='color:#ffffff' ></i></div>
+            <h2>Complete_Window1781</h2>
+            <div class="share-icon">📤</div>
           </div>
 
           <!-- Share Button -->
@@ -170,7 +185,7 @@
 
           <div class="stats">
             <div>
-              <div class="value">0</div>
+              <div class="value">1</div>
               <div class="label">Post karma</div>
             </div>
             <div>
@@ -254,14 +269,14 @@
   </div>
 
   <!-- Chat Window -->
-  <div class="chat-window" id="chatWindow">
+  <!-- <div class="chat-window" id="chatWindow">
     <div class="chat-header">Open Chat</div>
     <div class="chat-messages" id="chatMessages"></div>
     <div class="chat-input">
       <input type="text" id="messageInput" placeholder="Type a message..." />
       <button onclick="sendMessage()">Send</button>
     </div>
-  </div>
+  </div> -->
 
   <script>
     // Activate button
@@ -271,25 +286,25 @@
       button.classList.add('active');
     }
 
-    // Toggle chat window
-    function toggleChat() {
-      const chatWindow = document.getElementById('chatWindow');
-      chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
-    }
+    // // Toggle chat window
+    // function toggleChat() {
+    //   const chatWindow = document.getElementById('chatWindow');
+    //   chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    // }
 
-    // Send a messages
-    function sendMessage() {
-      const messageInput = document.getElementById('messageInput');
-      const chatMessages = document.getElementById('chatMessages');
-      const messageText = messageInput.value.trim();
-      if (messageText) {
-        const messageElement = document.createElement('div');
-        messageElement.textContent = messageText;
-        chatMessages.appendChild(messageElement);
-        messageInput.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight; 
-      }
-    }
+    // // Send a messages
+    // function sendMessage() {
+    //   const messageInput = document.getElementById('messageInput');
+    //   const chatMessages = document.getElementById('chatMessages');
+    //   const messageText = messageInput.value.trim();
+    //   if (messageText) {
+    //     const messageElement = document.createElement('div');
+    //     messageElement.textContent = messageText;
+    //     chatMessages.appendChild(messageElement);
+    //     messageInput.value = '';
+    //     chatMessages.scrollTop = chatMessages.scrollHeight; 
+    //   }
+    // }
 
     // Toggle profile dropdownnnnn
     function toggleDropdown() {
@@ -297,5 +312,44 @@
       dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
     }
   </script>
+
+  <!-- Chat Sidebar -->
+<div id="chat-container" class="chat-container hidden">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Chats</h2>
+      <div class="sidebar-icons">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">⚙️</button>
+      </div>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item">Threads</li>
+      <li class="menu-item">Discover Chat Channels</li>
+    </ul>
+  </div>
+
+  <!-- Main Chat Panel -->
+  <div class="main-panel">
+    <div class="chat-header">
+      <div class="header-title">
+        <h2>Welcome to chat!</h2>
+      </div>
+    </div>
+    <div class="chat-body">
+      <img class="welcome-image" src="../img/avatar.png" alt="Chat Placeholder">
+      <p>Start a direct or group chat with other users.</p>
+      <button class="start-chat-btn">+ Start New Chat</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const chatContainer = document.getElementById("chat-container");
+    chatContainer.classList.toggle("hidden");
+  }
+</script>
 </body>
 </html>

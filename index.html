@@ -112,6 +112,24 @@
       <button type="button" class="btn px-3 py-1 rounded-full" style="background-color: #D93900; color: white;" data-bs-toggle="modal" data-bs-target="#loginModal">
         Log In
       </button>
+
+      <button 
+      class="dots-menu-btn flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-700" 
+      title="More options">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke-width="1.5" 
+        stroke="currentColor" 
+        class="w-5 h-5 text-white">
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM17.25 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" 
+        />
+      </svg>
+    </button>
     </div>
   </header>
 
@@ -233,33 +251,11 @@
             <!-- Submit Button -->
             <button 
               type="submit" 
+              id="submitBtn"
               class="btn-submit mt-4">
               Log In
             </button>
           </form>
-          
-          <script>
-            function login(event) {
-              // Prevent default form submission
-              event.preventDefault();
-          
-              const username = document.getElementById('username').value.trim();
-              const password = document.getElementById('password').value.trim();
-          
-              if (username && password) {
-                // Save username and password to localStorage
-                localStorage.setItem('username', username);
-                localStorage.setItem('password', password); // Password stored for demo purposes only; avoid this in production!
-          
-                // Redirect to Home.html
-                window.location.href = 'pages/Home.html';
-              } else {
-                alert('Please enter both username and password.');
-              }
-            }
-          </script>
-          
-            
           </div>
         </div>
       </div>
@@ -281,11 +277,7 @@
               <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
                <span>Popular</span></a>
           </li>
-          <li class="hoversidebar">
-            <a href="https://www.reddit.com/explore/" >
-              <i class='bx bx-group'></i>
-              <span>Explore</span></a>
-          </li>
+          
           <li class="hoversidebar">
             <a href="#" class="hoversidebar">
               <i class='bx bx-cricket-ball'></i>
@@ -576,16 +568,14 @@
 
 <!-- Login button -->
 <script>
-  // Wait for the DOM to fully load before executing
   document.addEventListener('DOMContentLoaded', function () {
-    // Get the form and input fields
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
     const submitBtn = document.getElementById('submitBtn');
-    
-    // Function to check if both fields are filled
+
+    // Function to check form inputs
     function checkForm() {
-      if (usernameInput.value && passwordInput.value) {
+      if (usernameInput.value.trim() && passwordInput.value.trim()) {
         submitBtn.classList.add('active');
         submitBtn.disabled = false;
       } else {
@@ -601,6 +591,19 @@
     // Check on page load in case fields are pre-filled
     checkForm();
   });
+
+  function login(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (username && password) {
+      localStorage.setItem('username', username); // For demo purposes only
+      window.location.href = 'pages/Home.html'; // Redirect after login
+    } else {
+      alert('Please enter both username and password.');
+    }
+  }
 </script>
 
 <script>

@@ -402,14 +402,14 @@
   </main>
   
   <!-- Chat Window -->
-  <div class="chat-window" id="chatWindow">
+  <!-- <div class="chat-window" id="chatWindow">
     <div class="chat-header">Open Chat</div>
     <div class="chat-messages" id="chatMessages"></div>
     <div class="chat-input">
       <input type="text" id="messageInput" placeholder="Type a message..." />
       <button onclick="sendMessage()">Send</button>
     </div>
-  </div>
+  </div> -->
 
   <script>
     const carouselContainer = document.querySelector('.carousel-container');
@@ -450,25 +450,25 @@
       button.classList.add('active');
     }
 
-    // Toggle chat window
-    function toggleChat() {
-      const chatWindow = document.getElementById('chatWindow');
-      chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
-    }
+    // // Toggle chat window
+    // function toggleChat() {
+    //   const chatWindow = document.getElementById('chatWindow');
+    //   chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    // }
 
-    // Send a message
-    function sendMessage() {
-      const messageInput = document.getElementById('messageInput');
-      const chatMessages = document.getElementById('chatMessages');
-      const messageText = messageInput.value.trim();
-      if (messageText) {
-        const messageElement = document.createElement('div');
-        messageElement.textContent = messageText;
-        chatMessages.appendChild(messageElement);
-        messageInput.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight; 
-      }
-    }
+    // // Send a message
+    // function sendMessage() {
+    //   const messageInput = document.getElementById('messageInput');
+    //   const chatMessages = document.getElementById('chatMessages');
+    //   const messageText = messageInput.value.trim();
+    //   if (messageText) {
+    //     const messageElement = document.createElement('div');
+    //     messageElement.textContent = messageText;
+    //     chatMessages.appendChild(messageElement);
+    //     messageInput.value = '';
+    //     chatMessages.scrollTop = chatMessages.scrollHeight; 
+    //   }
+    // }
 
     // Toggle profile dropdown
     function toggleDropdown() {
@@ -485,5 +485,44 @@
     // Initialize arrows
     updateArrows();
   </script>
+
+  <!-- Chat Sidebar -->
+<div id="chat-container" class="chat-container hidden">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Chats</h2>
+      <div class="sidebar-icons">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">⚙️</button>
+      </div>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item">Threads</li>
+      <li class="menu-item">Discover Chat Channels</li>
+    </ul>
+  </div>
+
+  <!-- Main Chat Panel -->
+  <div class="main-panel">
+    <div class="chat-header">
+      <div class="header-title">
+        <h2>Welcome to chat!</h2>
+      </div>
+    </div>
+    <div class="chat-body">
+      <img class="welcome-image" src="../img/avatar.png" alt="Chat Placeholder">
+      <p>Start a direct or group chat with other users.</p>
+      <button class="start-chat-btn">+ Start New Chat</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const chatContainer = document.getElementById("chat-container");
+    chatContainer.classList.toggle("hidden");
+  }
+</script>
 </body>
 </html>

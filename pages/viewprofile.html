@@ -268,16 +268,6 @@
     </section>
   </div>
 
-  <!-- Chat Window -->
-  <!-- <div class="chat-window" id="chatWindow">
-    <div class="chat-header">Open Chat</div>
-    <div class="chat-messages" id="chatMessages"></div>
-    <div class="chat-input">
-      <input type="text" id="messageInput" placeholder="Type a message..." />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div> -->
-
   <script>
     // Activate button
     function activateButton(button) {
@@ -285,26 +275,6 @@
       buttons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
     }
-
-    // // Toggle chat window
-    // function toggleChat() {
-    //   const chatWindow = document.getElementById('chatWindow');
-    //   chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
-    // }
-
-    // // Send a messages
-    // function sendMessage() {
-    //   const messageInput = document.getElementById('messageInput');
-    //   const chatMessages = document.getElementById('chatMessages');
-    //   const messageText = messageInput.value.trim();
-    //   if (messageText) {
-    //     const messageElement = document.createElement('div');
-    //     messageElement.textContent = messageText;
-    //     chatMessages.appendChild(messageElement);
-    //     messageInput.value = '';
-    //     chatMessages.scrollTop = chatMessages.scrollHeight; 
-    //   }
-    // }
 
     // Toggle profile dropdownnnnn
     function toggleDropdown() {

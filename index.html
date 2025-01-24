@@ -112,6 +112,24 @@
       <button type="button" class="btn px-3 py-1 rounded-full" style="background-color: #D93900; color: white;" data-bs-toggle="modal" data-bs-target="#loginModal">
         Log In
       </button>
+
+      <button 
+      class="dots-menu-btn flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-700" 
+      title="More options">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke-width="1.5" 
+        stroke="currentColor" 
+        class="w-5 h-5 text-white">
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM17.25 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" 
+        />
+      </svg>
+    </button>
     </div>
   </header>
 
@@ -233,33 +251,11 @@
             <!-- Submit Button -->
             <button 
               type="submit" 
+              id="submitBtn"
               class="btn-submit mt-4">
               Log In
             </button>
           </form>
-          
-          <script>
-            function login(event) {
-              // Prevent default form submission
-              event.preventDefault();
-          
-              const username = document.getElementById('username').value.trim();
-              const password = document.getElementById('password').value.trim();
-          
-              if (username && password) {
-                // Save username and password to localStorage
-                localStorage.setItem('username', username);
-                localStorage.setItem('password', password); // Password stored for demo purposes only; avoid this in production!
-          
-                // Redirect to Home.html
-                window.location.href = 'pages/Home.html';
-              } else {
-                alert('Please enter both username and password.');
-              }
-            }
-          </script>
-          
-            
           </div>
         </div>
       </div>
@@ -267,26 +263,32 @@
 
   <div class="">
     <!-- Sidebar -->
-    <aside class="w-64 fixed min-h-screen reddit-aside sidebar-border">
+    <aside class="w-64 fixed h-screen reddit-aside sidebar-border overflow-y-auto custom-scrollbar">
       <nav>
         <ul class="space-y-4 ">
           <li class=" active-page">
-            <a href="#" class="flex items-center space-x-2">
+            <a href="#" class="flex items-center">
               <i class='bx bxs-home-alt-2' style='color:#ffffff' ></i>
               <span>Home</span>
             </a>
           </li>
-          <li>
-            <a href="#" class="hover:text-orange-500">
+          <li class="hoversidebar">
+            <a href="pages/popular.html" >
               <i class='bx bx-right-top-arrow-circle' style='color:#ffffff' ></i>
                <span>Popular</span></a>
+          </li>
+          
+          <li class="hoversidebar">
+            <a href="#" class="hoversidebar">
+              <i class='bx bx-cricket-ball'></i>
+              <span>All</span></a>
           </li>
           <li>
             <hr style="width: 90%;">
           </li>
 
-          <li>
-            <a href="/pages/Explore.html" class="hover:text-orange-500">Explore</a>
+          <li class="hoversidebar">
+            <a href="/pages/Explore.html">Explore</a>
           </li>
         </ul>
 
@@ -294,12 +296,25 @@
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Topics</h3>
           <ul class="space-y-2">
-            <li><a href="#" class="hover:text-orange-500">Internet Culture</a></li>
-            <li><a href="#" class="hover:text-orange-500">Games</a></li>
+            <li class="hoversidebar">
+              <a href="#" class="hoversidebar">r/SkyChildrenOfLight</a>
+            </li>
+            
             <li>
               <hr style="width: 90%;">
             </li>
-            <li><a href="#" class="hover:text-orange-500">Q&As</a></li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-semibold mb-2">Topics</h3>
+          <ul class="space-y-2">
+            <li class="hoversidebar"><a href="#" >Internet Culture</a></li>
+            <li class="hoversidebar"><a href="#" >Games</a></li>
+            <li>
+              <hr style="width: 90%;">
+            </li>
+            <li class="hoversidebar"><a href="#" >Q&As</a></li>
             <li>
               <li>
                 <hr style="width: 90%;">
@@ -308,16 +323,17 @@
         <div class="mt-6">
           <h3 class="text-sm font-semibold mb-2">Resources</h3>
           <ul class="space-y-2">
-            <li><a href="https://redditinc.com/" class="hover:text-orange-500">About Reddit</a></li>
-            <li><a href="https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta" class="hover:text-orange-500">Advertise</a></li>
-            <li><a href="https://support.reddithelp.com/hc/en-us?utm_campaign=evergreen&utm_medium=footer&utm_source=reddit" class="hover:text-orange-500">Help</a></li>
-            <li><a href="https://redditinc.com/blog" class="hover:text-orange-500">Blog</a></li>
-            <li><a href="https://redditinc.com/careers" class="hover:text-orange-500">Careers</a></li>
-            <li><a href="https://redditinc.com/press" class="hover:text-orange-500">Press</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/" class="hover:text-orange-500">About Reddit</a></li>
+            <li class="hoversidebar"><a href="https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta" class="hover:text-orange-500">Advertise</a></li>
+            <li class="hoversidebar"><a href="https://support.reddithelp.com/hc/en-us?utm_campaign=evergreen&utm_medium=footer&utm_source=reddit" class="hover:text-orange-500">Help</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/blog" class="hover:text-orange-500">Blog</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/careers" class="hover:text-orange-500">Careers</a></li>
+            <li class="hoversidebar"><a href="https://redditinc.com/press" class="hover:text-orange-500">Press</a></li>
           </ul>
         </div>
       </nav>
     </aside>
+
 
     <!-- Feed -->
     <div class="carousel-reddit ">
@@ -552,16 +568,14 @@
 
 <!-- Login button -->
 <script>
-  // Wait for the DOM to fully load before executing
   document.addEventListener('DOMContentLoaded', function () {
-    // Get the form and input fields
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
     const submitBtn = document.getElementById('submitBtn');
-    
-    // Function to check if both fields are filled
+
+    // Function to check form inputs
     function checkForm() {
-      if (usernameInput.value && passwordInput.value) {
+      if (usernameInput.value.trim() && passwordInput.value.trim()) {
         submitBtn.classList.add('active');
         submitBtn.disabled = false;
       } else {
@@ -577,6 +591,19 @@
     // Check on page load in case fields are pre-filled
     checkForm();
   });
+
+  function login(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (username && password) {
+      localStorage.setItem('username', username); // For demo purposes only
+      window.location.href = 'pages/Home.html'; // Redirect after login
+    } else {
+      alert('Please enter both username and password.');
+    }
+  }
 </script>
 
 <script>

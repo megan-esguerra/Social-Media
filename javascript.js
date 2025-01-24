@@ -67,3 +67,31 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
     
+    // Script for Chat Panel Interactivity
+document.addEventListener("DOMContentLoaded", () => {
+  const backButton = document.querySelector(".back-btn");
+  const closeButton = document.querySelector(".close-btn");
+  const startChatButton = document.querySelector(".start-chat-btn");
+
+  // Navigate Back Action (Placeholder)
+  backButton.addEventListener("click", () => {
+    alert("Back button clicked!");
+  });
+
+  // Close Chat Panel
+  closeButton.addEventListener("click", () => {
+    document.querySelector(".main-panel").style.display = "none";
+    alert("Chat panel closed!");
+  });
+
+  // Start New Chat Action (Placeholder)
+  startChatButton.addEventListener("click", () => {
+    alert("Starting a new chat...");
+  });
+});
+
+
+function toggleChat() {
+  const chatContainer = document.getElementById("chat-container");
+  chatContainer.classList.toggle("hidden");
+}
